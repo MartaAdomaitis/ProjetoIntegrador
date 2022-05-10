@@ -2,6 +2,7 @@
   "name": "projetointegrador",
   "version": "0.0.0",
   "private": true,
+  "main": "./src/routes/index.js",
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon ./app"
