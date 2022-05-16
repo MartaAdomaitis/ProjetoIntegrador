@@ -7,7 +7,7 @@ const usersRouter = require('./src/routes/users');
 const app = express();
 
 app.get("./", (req,res)=>{
-  return ("indexRouter");
+  return (indexRouter);
 });
 app.listen(3000, ()=>{
   console.log('server is running');
