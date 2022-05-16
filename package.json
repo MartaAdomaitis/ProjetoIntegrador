@@ -2,10 +2,9 @@
   "name": "projetointegrador",
   "version": "0.0.0",
   "private": true,
-  "main": "./src/routes/index.js",
+  "main": "./src/routes/index",
   "scripts": {
-    "start": "node ./bin/www",
-    "dev": "nodemon ./app"
+    "dev": "node ./app"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
