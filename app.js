@@ -10,7 +10,7 @@ app.get("/", (req,res)=>{
   res.render ("index");
 });
 
-app.get("/detalhesproduto", (req,res)=>{
+app.get("/detalheproduto", (req,res)=>{
   res.render ("detalhesProduto");
 });
 
