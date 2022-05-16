@@ -20,7 +20,6 @@ app.listen(3000, ()=>{
 
 // view engine setup
 app.set('views', path.join(__dirname, './src/views'));
-app.use(express.static(__dirname + './projetoIntegrador/public'));
 app.set('view engine', 'ejs');
 
 module.exports = app;
