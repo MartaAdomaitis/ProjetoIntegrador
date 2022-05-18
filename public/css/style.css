@@ -98,12 +98,6 @@ body {
         justify-content: space-between;
     }
 
-    .anuncio > div{
-        flex-flow: row nowrap;
-       justify-content: space-between;
-
-    }
-
     .procurados {
         display: flex;
         flex: wrap;
@@ -165,6 +159,10 @@ body {
             margin-top: -1%;
                 text-align:center;
                 color: #FFFFFF;
+        }
+        .opcoesjogos{
+            display: flex; 
+    
         }
 
         
