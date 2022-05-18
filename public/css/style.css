@@ -10,7 +10,7 @@ z-index: 8;
 .retangulo-header{
 position: absolute;
 width: 150vw;
-height: 160px;
+height: 80%;
 top:-60%;
 margin-left:-180%;
 z-index:15;
@@ -141,7 +141,7 @@ body {
 
     .TextoLegal{
         position: relative;
-        right: -12vw;
+        right: -5vw;
         width: 90vw;
         font-family: 'Poppins';
        font-style: normal;
@@ -152,7 +152,19 @@ body {
        }
        .redes-sociais{
         display: flex;  
-        margin-top: -2%;
+        margin-top: -3%;
         margin-left: 50%;
         }
+
+        .redes{
+            display: flex;  
+            font-family: 'Poppins';
+            font-style: normal;
+            font-size: 15px;
+            margin-left: 40%;
+            margin-top: -1%;
+                text-align:center;
+                color: #FFFFFF;
+        }
+
         
