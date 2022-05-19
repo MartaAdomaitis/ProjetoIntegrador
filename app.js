@@ -16,6 +16,11 @@ app.get("/detalhesProduto", (req,res)=>{
 
 app.get("/home", (req,res)=>{
   res.render ("home");
+
+});
+
+app.get("/categoriasjogos", (req,res)=>{
+  res.render ("categoriasjogos");
 });
 
 app.listen(3000, ()=>{
