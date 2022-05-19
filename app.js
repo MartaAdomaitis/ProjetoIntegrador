@@ -14,6 +14,10 @@ app.get("/detalheproduto", (req,res)=>{
   res.render ("detalhesProduto");
 });
 
+app.get("/categoriasjogos", (req,res)=>{
+  res.render ("categoriasjogos");
+});
+
 app.listen(3000, ()=>{
   console.log('server is running');
 });

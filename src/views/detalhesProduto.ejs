@@ -1,11 +1,12 @@
-    <head><%- include("./partials/head") %></head>
-    <link href="/style.css" rel="stylesheet">
+    <head><%- include("./partials/head") %>
+    <link href="/style.css" rel="stylesheet"></head>
+ 
 <body>
     <header>
         <%- include("./partials/header") %>
     </header> 
 <main>
-    <div class="Controle">
+    <div class="banner-principal">
         <img class=banner src="banner.png" alt="Imagem do produto 1">
        <div class="botoes">
         <span id="seta-esquerda"><img src="Vector-1.png" alt="seta esquerda"></span>
@@ -15,36 +16,42 @@
         <span id="botao-direita"><img src="Ellipse 2.png" alt="botão direita"></span>
     </div>
     </div>
-
-    <article  class="detalhesDoProduto">
+  
+    <article  class="detalhes-do-Produto">
+        <div>
+        <h1 class="Descrição">Descrição do Produto</h1>
+    </div>
         <div class="produto">
-            <img src="xbox.jpg" alt="Foto do produto">
-            <h1 class="Descrição">Descrição do Produto</h1>
+            <div>
+            <img class="foto-produto" src="xbox.jpg" alt="Foto do produto">
+        </div>
             <div class="infos-produto">
+               <div class="nome-preço">     
             <h2 class="nomeproduto">Xbox One X</h2>
             <h3 class="preço">R$2200</h3>
-            <h5 class="textoproduto">Detalhes do produto:
-                <br>
-                Inclui controle.
-                <br>
-                Resolução de 3840px x 2160px.
-                <br>
-                Memória RAM de 12GB.
-                <br>
-                Horas de diversão garantidas.
+            <h5 class="textoproduto">Detalhes do produto: 
+                <br> Inclui controle.
+                <br> Resolução de 3840px x 2160px. 
+                <br> Memória RAM de 12GB. 
+                <br> Horas de diversão garantidas.
                 <br>
                 Conta com: 1 cabo hdmi, 1 assinatura a xbox game pass por 1 mês, 1 assinatura a xbox live gold por 14 dias, 1 cabo de alimentação ca.</h5>
+            </div>
+            
             </div>
             </div>
     
     </article>
+   
     <div class="video-produto">
 <img class="video" src="videoXbox.png" alt="vídeo xbox">
   <img class="play" src="play.png" alt="Assista ao vídeo">
+</div>
+<div class="menu">
   <h5 class="legenda-video">Os verdadeiros jogos em 4K começam aqui
     Experimente uma jogabilidade em 4K imersiva, onde a ação ganha vida com frame buffers de 2160p e 6 Teraflops de potência de processamento gráfico.</h5>
-</div>
-    <div class="menu"></div>
+
+  </div>
 
         <h2 class="jogos-sugeridos">Aproveite para jogar</h2>
          <div class="opcoesjogos">
@@ -54,11 +61,31 @@
         </div>
 
         <div class="opcao-2">
-       <a href="www.google.com"><img src="reddead.jpg" alt="Read Dead Redemption"></a>
+       <a href="www.google.com"><img src="marvel.png" alt="Read Dead Redemption"></a>
         </div>
         <div class="opcao-3">
             <a href="www.google.com"><img src="farcry.png" alt="Far cry 6"></a>
              </div>
+             <div class="opcao-1">
+                <a href="www.google.com"><img src="dead.png" alt="Dead by day light"></a>
+             </div>
+     
+             <div class="opcao-2">
+            <a href="www.google.com"><img src="marvel.png" alt="Read Dead Redemption"></a>
+             </div>
+             <div class="opcao-3">
+                 <a href="www.google.com"><img src="farcry.png" alt="Far cry 6"></a>
+                  </div>
+                  <div class="opcao-1">
+                    <a href="www.google.com"><img src="dead.png" alt="Dead by day light"></a>
+                 </div>
+         
+                 <div class="opcao-2">
+                <a href="www.google.com"><img src="marvel.png" alt="Read Dead Redemption"></a>
+                 </div>
+                 <div class="opcao-3">
+                     <a href="www.google.com"><img src="farcry.png" alt="Far cry 6"></a>
+                      </div>
        </div>
     </div>
 
