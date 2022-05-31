@@ -1,0 +1,31 @@
+<head><%- include("./partials/head") %>
+    <link href="/style.css" rel="stylesheet"></head>
+ 
+<body>
+    <header>
+        <%- include("./partials/header") %>
+    </header> 
+<main>
+    <html>
+    <form id="formulario">
+        <div class="forms">
+            <label for="name">Nome</label>
+            <input type="text" id="name"/>
+        </div>
+        <div class="forms">
+            <label for="email">E-mail</label>
+            <input type="email" id="email"/>
+        </div>
+        <div class="forms">
+            <label for="password">Senha</label>
+            <input type="password" id="password"/>
+        </div>
+        <button>Enviar</button>
+    </form>
+    <ul id="errors"></ul>
+</html>
+</main>
+    <footer>
+        <%- include("./partials/footer") %>
+    </footer> 
+</body>
