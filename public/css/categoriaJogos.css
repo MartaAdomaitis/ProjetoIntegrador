@@ -1,0 +1,26 @@
+/*body categorias*/ 
+        
+h1 {
+    text-align: center;
+    margin-top: 1px;
+}
+        .CATEGORIAS{
+   display: flex;
+   flex-wrap: wrap;
+   max-width: 800px;
+   max-height: 900px;
+   margin: 0 auto;
+   font-family: Arial;
+   
+}
+        .CATEGORIAS > div {
+ flex: 1 1 200px;
+ margin: 10px;
+ border-color: rgb(145, 144, 142);
+}
+
+    imagem {
+    max-width: 100%;
+    display: block;
+    
+}
