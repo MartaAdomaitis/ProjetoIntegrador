@@ -27,7 +27,12 @@ app.get("/home", (req,res)=>{
 app.get("/categoriasjogos", (req,res)=>{
   res.render ("categoriasjogos");
 });
-
+app.get("/cadastro", (req,res)=>{
+  res.render ("cadastro");
+});
+app.get("/finalizacaopedido", (req,res)=>{
+  res.render ("finalizacaoPedido");
+});
 app.listen(3000, ()=>{
   console.log('server is running');
 });
