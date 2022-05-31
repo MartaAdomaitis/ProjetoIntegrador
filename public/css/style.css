@@ -14,4 +14,17 @@ body {
     margin-left: -1%;
  
   }
-    
+
+        /*Ajustar o conteudo para Smartphones*/
+
+@media screen and (min-widht:480px){
+    body{
+        max-width: 480px;
+        font-size: 1.0em;
+    }
+}
+
+
+
+        
+        

@@ -10,8 +10,18 @@ app.get("/", (req,res)=>{
   res.render ("index");
 });
 
-app.get("/detalheproduto", (req,res)=>{
+app.get("/carrinho", (req,res)=>{
+  res.render ("carrinho");
+});
+
+
+app.get("/detalhesProduto", (req,res)=>{
   res.render ("detalhesProduto");
+});
+
+app.get("/home", (req,res)=>{
+  res.render ("home");
+
 });
 
 app.get("/categoriasjogos", (req,res)=>{
