@@ -10,6 +10,11 @@ app.get("/", (req,res)=>{
   res.render ("index");
 });
 
+app.get("/carrinho", (req,res)=>{
+  res.render ("carrinho");
+});
+
+
 app.get("/detalhesProduto", (req,res)=>{
   res.render ("detalhesProduto");
 });
