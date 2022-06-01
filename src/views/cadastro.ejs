@@ -1,28 +1,53 @@
 <head><%- include("./partials/head") %>
-    <link href="/style.css" rel="stylesheet"></head>
+    <link href="/style.css" rel="stylesheet">
+    <title>Cadastro | Login</title></head>
 
- 
 <body>
     <header>
         <%- include("./partials/header") %>
     </header> 
 <main>
     <html>
-    <form id="formulario">
-        <div class="forms">
+        <h1>Seja bem-vindo(a)!</h1>
+        <div class="cadastro">
+        <div class="Login">
+            <h2>LOGIN</h2>
+        <form id="formularioLogin">
+            <div class="email">
+                <label for="email">E-mail</label>
+                <input type="email" id="email1"/>
+            </div>
+            <div class="password">
+                <label for="password">Senha</label>
+                <input type="password" id="password1"/>
+            </div>
+          
+            <button>Enviar</button>
+        </form>
+    </div>
+
+    <div class="layoutCadastro"><h2>QUERO ME CADASTRAR</h2>
+    <form id="formularioCadastro">
+        <div class="name">
             <label for="name">Nome</label>
             <input type="text" id="name"/>
         </div>
-        <div class="forms">
+        <div class="email">
             <label for="email">E-mail</label>
             <input type="email" id="email"/>
         </div>
-        <div class="forms">
+        <div class="password">
             <label for="password">Senha</label>
             <input type="password" id="password"/>
         </div>
+        <div class="adress">
+            <label for="adress">Endereço</label>
+            <input type="text" id="adress"/>
+        </div>
         <button>Enviar</button>
     </form>
+</div>
+</div>
     <ul id="errors"></ul>
 </html>
 </main>
