@@ -15,7 +15,7 @@ app.get("/carrinho", (req,res)=>{
 });
 
 
-app.get("/detalhesProduto", (req,res)=>{
+app.get("/detalheProduto", (req,res)=>{
   res.render ("detalhesProduto");
 });
 
