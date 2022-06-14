@@ -1,38 +1,18 @@
 const express = require('express');
 const path = require('path');
 
-const indexRouter = require('./src/routes/index.js');
-
+const rotaIndex = require('./src/routes/index');
+const rotaProdutos = require('./src/routes/produtos');
+const rotaCarrinho = require('./src/routes/carrinho');
+const rotaUsers = require('./src/routes/user');
 
 const app = express();
 
-app.get("/", (req,res)=>{
-  res.render ("index");
-});
+app.use(rotaIndex);
+app.use(rotaProdutos);
+app.use(rotaCarrinho);
+app.use(rotaUsers);
 
-app.get("/carrinho", (req,res)=>{
-  res.render ("carrinho");
-});
-
-
-app.get("/detalheProduto", (req,res)=>{
-  res.render ("detalhesProduto");
-});
-
-app.get("/home", (req,res)=>{
-  res.render ("home");
-
-});
-
-app.get("/categoriasjogos", (req,res)=>{
-  res.render ("categoriasjogos");
-});
-app.get("/cadastro", (req,res)=>{
-  res.render ("cadastro");
-});
-app.get("/finalizacaopedido", (req,res)=>{
-  res.render ("finalizacaoPedido");
-});
 app.listen(3000, ()=>{
   console.log('server is running');
 });

@@ -6,10 +6,10 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-const controller = {
+const productsController = {
 	// Root - Show all products
 	index: (req, res) => {
-		res.render('products', {
+		res.render('categoriasjogos', {
 			products,
 			toThousand
 		})
@@ -19,11 +19,13 @@ const controller = {
 	detail: (req, res) => {
 		let id = req.params.id
 		let product = products.find(product => product.id == id)
-		res.render('detail', {
+		res.render("detalhesProduto", {
 			product,
 			toThousand
 		})
 	},
+
+	
 
 	// Create - Form to create
 	create: (req, res) => {
@@ -79,4 +81,4 @@ const controller = {
 	}
 };
 
-module.exports = controller;
+module.exports = productsController;
