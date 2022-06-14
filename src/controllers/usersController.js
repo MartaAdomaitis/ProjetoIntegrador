@@ -12,13 +12,9 @@ const visited = products.filter(function(product){
 const inSale = products.filter(function(product){
 	return product.category == 'in-sale'
 })
-const controller = {
+const usersController = {
 	index: (req, res) => {
-		res.render('index', {
-			visited,
-			inSale,
-			toThousand
-		});
+		res.render('cadastro');
 	},
 	search: (req, res) => {
 		let search = req.query.keywords;
@@ -31,4 +27,4 @@ const controller = {
 	},
 };
 
-module.exports = controller;
+module.exports = usersController;
