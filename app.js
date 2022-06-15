@@ -12,7 +12,9 @@ app.use(rotaIndex);
 app.use(rotaProdutos);
 app.use(rotaCarrinho);
 app.use(rotaUsers);
-
+app.get('painelUsuario',(req,res)=>{
+  res.render("painelUsuario")
+});
 app.listen(3000, ()=>{
   console.log('server is running');
 });
