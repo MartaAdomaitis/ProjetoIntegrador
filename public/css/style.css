@@ -681,97 +681,51 @@ button{
   /*painelUsuario*/
 
   *{
-    margin: 0;
-    padding: 0;
-    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+a{
     text-decoration: none;
-    font-family: 'roboto' sans-serif;
-
-}
-.sidebar{
-    position:fixed;
-    left: -250px;
-    top:30%;
-    width: 250px;
-    height: 100%;
-    background: #042331;
-    transition: all .5s ease;
-}
-.sidebar header{
-      font-size: 20px;
-      color: black;
-      text-align: center;
-      line-height: 70px;
-      background:#063146;
-      user-select: none;
-
-}
-.sidebar ul a{
-    display: block;
-    height: 100%;
-    width: 100%;
-    line-height: 65px;
-    font-size: 18px;
     color: black;
-    padding-left: 40px;
-    box-sizing: border-box;
-    border-top: 1px solid rgba(255,255,255,.1) ;
-    border-bottom: 1px solid black;
-    transition: .4s;
 }
-ul li:hover{
-    padding-left: 50px;
+body{
+    font-family: Arial;
 }
-.sidebar ul a li{
-    padding-right: 16px;
+ul{
+    list-style: none;
 }
-#check{
-    display: none;
+img{
+    width: 50px;
 }
-label #btn,label #cancel{
-    background: #000857;
-    border-radius: 3px;
+input[type="checkbox"]
+{display: none;}
+
+nav{
+    background-color: rgb(96, 100, 99);
+    width: 350px;
+    height: 100%;
+    left: -350px;
     position: absolute;
-    cursor: pointer;
-}
-label #btn{
-    left: 40px;
-    top:25px;
-    font-size: 35px;
-    color: white;
-    padding: 6px 12px;
-    transition: all .5s ;
-}
-label #cancel{
-    z-index: 1111;
-    left: -195px;
-    top: 17px;
-    font-size: 30px;
-    color: #000857;
-    padding: 4px 9px;
-    transition: all .5s ease;
-}
-#check:checked ~ .sidebar{
-    left: 0;
-}
-#check:checked ~label #btn{
-    left: 250px;
-    opacity: 0;
-    pointer-events: none;
-}
-#check:checked ~label #cancel{
-    left: 195px;
-}
-section{
-    background: no-repeat ;
-    background-position: center;
-    background-size: cover;
-    height: 100vh;
     transition: all .5s;
-
-
-
 }
-#check:checked ~section{
-    margin-left: 200px;
+input[type="checkbox"]:checked ~ nav
+{transform: translateX(350px);}
+ul{
+    top: 70px;
+    position: absolute;
+    width: 100%;
+}
+a{
+    display: block;
+    padding: 20px 5px;
+    color: white;
+}
+a:hover{
+    background-color: rgba(176,224,230);
+    color: black;
+}
+label{
+    padding: 15px;
+    position: absolute;
+    z-index: 1;
 }
