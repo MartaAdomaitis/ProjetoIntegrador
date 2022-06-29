@@ -679,53 +679,27 @@ button{
 }
   
   /*painelUsuario*/
-
-  *{
-    padding: 0px;
-    margin: 0px;
+  
+  
+  .info-container{
+    align-items: center;
+    width: 80%;
+    display:grid;
+     grid-template-columns:1fr 1fr
 }
-a{
-    text-decoration: none;
-    color: black;
-}
-body{
-    font-family: Arial;
-}
-ul{
-    list-style: none;
-}
-img{
-    width: 50px;
-}
-input[type="checkbox"]
-{display: none;}
-
-nav{
-    background-color: rgb(96, 100, 99);
-    width: 350px;
-    height: 100%;
-    left: -350px;
-    position: absolute;
-    transition: all .5s;
-}
-input[type="checkbox"]:checked ~ nav
-{transform: translateX(350px);}
-ul{
-    top: 70px;
-    position: absolute;
-    width: 100%;
-}
-a{
+.container-principal1{
+    width: 80%;
     display: block;
-    padding: 20px 5px;
-    color: white;
+    align-items: center;
+
 }
-a:hover{
-    background-color: rgba(176,224,230);
-    color: black;
+.produto{
+    width: 100%;
+    display: flex;
 }
-label{
-    padding: 15px;
-    position: absolute;
-    z-index: 1;
+.texto{
+
+}
+.foto{
+   margin-right: 20px;
 }
