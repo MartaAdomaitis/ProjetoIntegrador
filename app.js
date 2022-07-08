@@ -7,6 +7,7 @@ const rotaCarrinho = require('./src/routes/carrinho');
 const rotaUsers = require('./src/routes/user');
 
 const app = express();
+const db =require('./models/index')
 
 app.use(rotaIndex);
 app.use(rotaProdutos);
@@ -16,6 +17,20 @@ app.use(rotaUsers);
 app.get('/painelusuario',(req,res)=>{
   res.render("painelUsuario")
 });
+
+app.get('/home', (_, res) => {
+  console.log('db', db.produto);
+  res.send('Hello world')
+})
+
+app.get('/produto', async (_, res) => { 
+  try {
+      const products = await db.Product.findAll();
+       return res.send(products)
+  } catch(error) {
+   res.send('Deu algum BO na busca');
+  }
+})
 
 app.listen(3000, ()=>{
   console.log('server is running');
