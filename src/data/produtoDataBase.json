@@ -1,38 +1,38 @@
 [
     {
      "id": 1,
-     "name": "Jogo Mortal",
-     "price": 100,
+     "name": "Jogo Sonic 3 Xbox'",
+     "price": 150,
      "discount": 50,
      "category": "visited",
-     "description": "Jogo playstation Mortal para faixa etária a partir dos 17 anos de idade.",
+     "description": "Jogo Xbox Sonic para faixa etária a partir dos 04 anos de idade.",
      "image": ""
     },
     {
      "id": 2,
-     "name": "Macbook Pro 2022",
-     "price": 500,
+     "name": "Jogo F1 Xbox",
+     "price": 89.90,
      "discount": 3,
      "category": "in-sale",
-     "description": "Macbook Pro 2019 Mpxq2ll/a Intel Core i5 2.3 Ghz 8gb RAM 128gb SSD 13.3 Retina Display Apple Brand New Original. Importado dos EUA. Entregue com a fatura de compra para ter a garantia do fabricante.",
-     "image": "img-macbook-pro-2019.jpg"
+     "description": "Jogo F1 Xbox. Importado dos EUA. Entregue com a fatura de compra para ter a garantia do fabricante.",
+     "image": "./public/img/Corrida.png"
     },
     {
      "id": 3,
-     "name": "Samsung Galaxy S10",
-     "price": 72999,
+     "name": "Jogo Mortal Kombat PlayStation",
+     "price": 35990,
      "discount": 25,
      "category": "in-sale",
-     "description": "Experiência excepcional de visualização. Assista suas séries e filmes favoritos na melhor definição, com cores brilhantes e detalhes precisos em todo o seu conteúdo, e desfrute ainda mais do melhor entretenimento graças a sua tela grande e amplos ângulos de visão.",
-     "image": "img-samsung-galaxy-s10.jpg"
+     "description": "Jogo Mortal Kombat PlayStation. Experiência excepcional de visualização.",
+     "image": "./public/img/mortal.png"
     },
     {
      "id": 4,
-     "name": "Geladeira frost free Whirlpool WRM45A",
-     "description": "Aproveite o frescor de sua comida e guarde-a de maneira prática e conveniente em seu refrigerador Whirlpool, o protagonista de sua cozinha. Seu sistema frost free evita a geração de gelo e lhe permitirá preservar o sabor e as propriedades nutricionais de seus produtos, enquanto seu freezer de 86 litros de capacidade facilitará a distribuição e a arrumação de seus alimentos congelados, para que você não tenha que se preocupar com a falta de espaço.",
-     "price": 47900,
+     "name": "Xbox One",
+     "description": "Xbox One. Lançamento 2022.",
+     "price": 4500,
      "discount": 10,
-     "image": "img-heladera-whirpool.jpg",
+     "image": "./public/img/xbox.jpg",
      "category": "in-sale"
     },
     {

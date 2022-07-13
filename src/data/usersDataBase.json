@@ -1,1 +1,23 @@
-[]
+[{
+    "id": 1,
+    "nome": "Amanda Mirelly",
+    "endereco ": "Rua das Flores",
+    "cpf ": "111.111.111-11",
+    "telefone": "8398888888"
+    
+},
+{
+    "id": 2,
+    "nome": "'Martha'",
+    "endereco ": "Rua São Paulo",
+    "cpf ": "222.222.222-22",
+    "telefone": "1121568971"
+    
+},
+{
+    "id": 3,
+    "nome": "Guilherme",
+    "endereco ": "Rua Rio de Janeiro",
+    "cpf ": "111.111.111-11",
+    "telefone": "8398888888"
+}]

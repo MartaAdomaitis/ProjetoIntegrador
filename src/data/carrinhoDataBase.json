@@ -1,1 +1,18 @@
-[]
+[{
+    "id": 1,
+    "name": "Jogo Sonic 3 Xbox'",
+    "price": 150,
+    "discount": 50,
+    "category": "visited",
+    "description": "Jogo Xbox Sonic para faixa etária a partir dos 04 anos de idade.",
+    "image": ""
+   },
+   {
+    "id": 2,
+    "name": "Jogo F1 Xbox",
+    "price": 89.90,
+    "discount": 3,
+    "category": "in-sale",
+    "description": "Jogo F1 Xbox. Importado dos EUA. Entregue com a fatura de compra para ter a garantia do fabricante.",
+    "image": "./public/img/Corrida.png"
+   }]
