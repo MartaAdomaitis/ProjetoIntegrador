@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 
 const rotaIndex = require('./src/routes/index');
-const rotaProdutos = require('./src/routes/produtos');
+const rotaProdutos = require('./src/routes/produto');
 const rotaCarrinho = require('./src/routes/carrinho');
 const rotaUsers = require('./src/routes/user');
 
@@ -18,7 +18,7 @@ app.get('/painelusuario',(req,res)=>{
   res.render("painelUsuario")
 });
 
-app.get('/home', (_, res) => {
+app.get('/listaproduto', (_, res) => {
   console.log('db', db.produto);
   res.send('Hello world')
 })
