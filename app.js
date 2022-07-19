@@ -7,7 +7,7 @@ const rotaCarrinho = require('./src/routes/carrinho');
 const rotaUsers = require('./src/routes/user');
 
 const app = express();
-const db =require('./models/index')
+const db = require('./models/index')
 
 app.use(rotaIndex);
 app.use(rotaProdutos);
