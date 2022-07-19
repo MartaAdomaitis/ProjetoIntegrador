@@ -17,8 +17,8 @@ const productsController = {
 
 	// Detail - Detail from one product
 	detail: (req, res) => {
-		let id = req.params.id
-		let product = products.find(product => product.id == id)
+		const id = req.params.id
+		const product = products.find(product => product.id == id)
 		res.render("detalhesProduto", {
 			product,
 			toThousand
@@ -34,7 +34,7 @@ const productsController = {
 	
 	// Create -  Method to store
 	store: (req, res) => {
-		let newProduct = {
+		const newProduct = {
 			id: products[products.length - 1].id + 1,
 			...req.body,
 			image: 'default-image.png'
@@ -46,14 +46,14 @@ const productsController = {
 
 	// Update - Form to edit
 	edit: (req, res) => {
-		let id = req.params.id
-		let productToEdit = products.find(product => product.id == id)
+		const id = req.params.id
+		const productToEdit = products.find(product => product.id == id)
 		res.render('product-edit-form', {productToEdit})
 	},
 	// Update - Method to update
 	update: (req, res) => {
-		let id = req.params.id;
-		let productToEdit = products.find(product => product.id == id)
+		const id = req.params.id;
+		const productToEdit = products.find(product => product.id == id)
 
 		productToEdit = {
 			id: productToEdit.id,
@@ -74,8 +74,8 @@ const productsController = {
 
 	// Delete - Delete one product from DB
 	destroy : (req, res) => {
-		let id = req.params.id;
-		let finalProducts = products.filter(product => product.id != id);
+		const id = req.params.id;
+		const finalProducts = products.filter(product => product.id != id);
 		fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' '));
 		res.redirect('/');
 	}
