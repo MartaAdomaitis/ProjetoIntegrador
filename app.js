@@ -7,7 +7,7 @@ const rotaCarrinho = require('./src/routes/carrinho');
 const rotaUsers = require('./src/routes/user');
 
 const app = express();
-const db = require('./models/index')
+const db = require('./src/database/models/index')
 
 app.use(rotaIndex);
 app.use(rotaProdutos);
@@ -18,7 +18,7 @@ app.get('/painelusuario',(req,res)=>{
   res.render("painelUsuario")
 });
 
-app.get('/listaproduto', (_, res) => {
+app.get('/home', (_, res) => {
   console.log('db', db.produto);
   res.send('Hello world')
 })
@@ -43,3 +43,4 @@ app.use( express.static( "public/css" ));
 app.set('view engine', 'ejs');
 
 module.exports = app;
+module.exports = db;
