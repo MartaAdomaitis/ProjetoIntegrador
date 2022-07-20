@@ -21,15 +21,15 @@ module.exports = (sequelize, dataTypes) => {
             timestamps: false
         }
     )
-    Product.associate = (models) => {
-      Product.belongsTo(models.ProductType, {
+    produto.associate = (models) => {
+      produto.belongsTo(models.ProductType, {
         as: 'category',
         foreignKey: 'product_type'
       })
     }
 
-    Produto.associate = (models) => {
-      Produto.belongsToMany(models.Store, {
+    produto.associate = (models) => {
+      produto.belongsToMany(models.Store, {
         through: 'stores_produto',
         as: 'stores',
         foreignKey: 'id_produto',
