@@ -1,0 +1,61 @@
+
+    
+    CREATE DATABASE projeto_integrador;
+    
+    USE projeto_integrador;
+    
+    CREATE TABLE usuario (
+        id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+        nome VARCHAR(50) NOT NULL,
+        endereco VARCHAR(240) NOT NULL,
+        cpf CHAR(14),
+        telefone VARCHAR(15)
+    );
+    
+    CREATE TABLE produto(
+        id INT NOT NULL AUTO_INCREMENT,
+        nome VARCHAR (200) NOT NULL,
+        preco DECIMAL(5,2) NOT NULL, 
+        PRIMARY KEY (`id`)
+    );
+    
+    CREATE TABLE pedidos (
+    id INT NOT NULL AUTO_INCREMENT,
+    clientes_id INT NOT NULL,
+    endereco VARCHAR(240) NOT NULL,
+    total DECIMAL(9,2) NOT NULL,
+    CONSTRAINT fk_cliente FOREIGN KEY (clientes_id)REFERENCES clientes(id),
+    PRIMARY KEY (`id`)
+    );
+    
+    CREATE TABLE fabricante (
+    id INT NOT NULL AUTO_INCREMENT,
+    cnpj INT NOT NULL,
+    razao_social VARCHAR(240) NOT NULL,
+    endereco VARCHAR(240) NOT NULL,
+    telefone INT(15),
+    PRIMARY KEY (`id`)
+    );
+    
+    CREATE TABLE oferta (
+    produto_id INT NOT NULL,
+    preco DECIMAL(5,2) NOT NULL,
+    desconto DECIMAL(5,2) NOT NULL,
+    CONSTRAINT fk_produto FOREIGN KEY (produto_id)REFERENCES produto(id)
+    );
+    
+    CREATE TABLE estoque (
+    pedidos_id INT NOT NULL,
+    nome VARCHAR (200) NOT NULL,
+    preco DECIMAL(5,2) NOT NULL,
+    CONSTRAINT fk_pedidos FOREIGN KEY (pedidos_id)REFERENCES pedidos(id)
+    );
+    
+    CREATE TABLE finalizacao (
+    clientes_id INT NOT NULL,
+    pedidos_id INT NOT NULL,
+    produto_id INT NOT NULL,
+    fabricante_id INT NOT NULL,
+    oferta DECIMAL(5,2) NOT NULL,
+    total DECIMAL(9,2) NOT NULL
+    );

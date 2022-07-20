@@ -17,8 +17,8 @@ const usersController = {
 		res.render('cadastro');
 	},
 	search: (req, res) => {
-		let search = req.query.keywords;
-		let productsToSearch = products.filter(product => product.name.toLowerCase().includes(search));	
+		const search = req.query.keywords;
+		const productsToSearch = products.filter(product => product.name.toLowerCase().includes(search));	
 		res.render('results', { 
 			products: productsToSearch, 
 			search,
