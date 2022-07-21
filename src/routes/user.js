@@ -4,6 +4,7 @@ const multer = require("multer");
 
 const usersController = require('../controllers/usersController');
 router.get('/cadastro', usersController.index); 
+router.get('/painelusuario', usersController.painel);
 
 //router.get('/findByPk/:id', usersController.findByPk)
 

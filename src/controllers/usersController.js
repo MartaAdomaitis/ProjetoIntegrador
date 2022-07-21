@@ -25,6 +25,9 @@ const usersController = {
 			toThousand,
 		});
 	},
+	painel:(req, res) => {
+		res.render('painelUsuario');
+	},
 };
 
 module.exports = usersController;
