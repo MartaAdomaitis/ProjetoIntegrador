@@ -1,12 +1,12 @@
 [
     {
      "id": 1,
-     "name": "Jogo Sonic 3 Xbox'",
+     "name": "Jogo Marvel 3 Xbox'",
      "price": 150,
      "discount": 50,
      "category": "visited",
-     "description": "Jogo Xbox Sonic para faixa etária a partir dos 04 anos de idade.",
-     "image": ""
+     "description": "Jogo Xbox Mrvel para faixa etária a partir dos 04 anos de idade.",
+     "image": "./public/img/marvel.png"
     },
     {
      "id": 2,
