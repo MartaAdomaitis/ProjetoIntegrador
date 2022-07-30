@@ -24,15 +24,15 @@ module.exports = (sequelize, DataType) => {
     )
 
     Pedido.associate = (models) => {
-        Pedido.belongsTo(models.Usuario, {
+        Pedido.belongsTo(modelsUsuario, {
             foreignKey: 'fk_usuario',
             as: 'usuario'
             })
         
-        Pedido.belongsToMany(models.Produto, {
+        Pedido.belongsToMany(modelsProduto, {
             foreignKey: 'fk_produto',
             as: 'itensPedido',
-            through: models.ItemPedido
+            through: modelsItemPedido
             })
     }
 

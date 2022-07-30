@@ -4,6 +4,8 @@ const multer = require("multer");
 
 const homeController = require('../controllers/indexController');
 
-router.get('/', homeController.index); 
+router.get('/', (req, res) => {
+        res.render("../views/index.ejs");
+    });
 
 module.exports = router;

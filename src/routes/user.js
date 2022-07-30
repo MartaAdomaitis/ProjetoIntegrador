@@ -4,27 +4,25 @@ const multer = require("multer");
 
 const usersController = require('../controllers/usersController');
 router.get('/cadastro', usersController.index); 
+router.get('/painelusuario', usersController.painel);
 
-router.get('/', usersController.home)
-
-
-router.get('/findByPk/:id', usersController.findByPk)
+//router.get('/findByPk/:id', usersController.findByPk)
 
 
-router.get('/find/:id', usersController.findOne)
+//router.get('/find/:id', usersController.findOne)
 
 
 router.get('/search', usersController.search)
 
 
-router.get('/creat', usersController.creat)
-router.post('/creat', usersController.store)
+//router.get('/creat', usersController.creat)
+//router.post('/creat', usersController.store)
 
 
-router.get('/editar/:id', usersController.edit)
-router.put('/editar/:id', usersController.update)
+//router.get('/editar/:id', usersController.edit)
+//router.put('/editar/:id', usersController.update)
 
 
-router.delete('/delete/:id', usersController.destroy)
+//router.delete('/delete/:id', usersController.destroy)
 
 module.exports = router;

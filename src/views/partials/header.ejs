@@ -1,23 +1,27 @@
 <head>
     <link href="/style.css" rel="stylesheet"></head>
     <header>
-        <div class="retangulo-header"></div>
-        <div id="logo">
-        <img src="logo.png" alt="Logo">
-        <img src="Vector-2.png" alt="Menu" id="botao-menu">
-        <img src="icon.png" alt="Login" id="login">
+        <div class="retangulo-header" ></div>
+        <div id="logo" >
+         <a href="http://localhost:3000/"><img src="logo.png" alt="Logo"></a>
+        <a href="http://localhost:3000/carrinho"><img src="carrinho.png" alt="Menu" id="carrinho"></a>
+
+        
+        <a href="http://localhost:3000/cadastro"><img src="icon.png" alt="Login" id="login"></a> 
         <div class="textoMenu">
-            <h2 class="consolesMenu" >CONSOLES</h2>
-            <h2 class="jogosMenu">JOGOS</h2>
-            <h2 class="contatosMenu">CONTATOS</h2>
+            <a href="http://localhost:3000/" class="consolesMenu">HOME</a>
+           <a class="jogosMenu"href="http://localhost:3000/categoriaProduto">JOGOS</a>
+           <a class="contatosMenu" href="http://localhost:3000/contato">CONTATO</a>
         </div>
-        <img class=lupaBusca src="lupa.png" alt="Lupa">
+        <button class=lupaBusca alt="Lupa"> <img src="lupa.png"></button>
         <form id="formulario">
             <div class="forms">
-                <label id="txtBusca" for="search" ></label>
+                <a href="http://localhost:3000/detail/:id'"> <label id="txtBusca" for="search" ></label></a>
                 <input type="text" id="busca"/>
                 </form>
             </div>
     </div>
+  
+      </body>
     </header>
-    </header>
+    
