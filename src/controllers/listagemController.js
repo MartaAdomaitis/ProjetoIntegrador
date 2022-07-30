@@ -1,16 +1,16 @@
 const db = require('../models/index');
 
-const listagemProduto = {
-    Produto: (req, res) => {
+const listagemController = {
+    listagem: (req, res) => {
     return res.render('listagemProduto')
     },
 
-    getAllProdutos: async (req, res) => {  
+    getAllListagem: async (req, res) => {  
 
         try {
 
-            const getProdutos = await db.Produto.findAll();
-            console.log(getProdutos)
+            const getListagem = await db.Listagem.findAll();
+            console.log(getListagem)
             
         } catch (error) { console.log(error.message) }
     }

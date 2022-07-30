@@ -1,10 +1,10 @@
 const db = require('../models/index');
 
-const updatepainelUsuario = {
+const updatepainelController = {
     updatepainelUsuario: async(req, res) => {
         const { id_usuario, email, senha} = req.body;
         try {
-            const updatepainelUsuario = await dbpainelUsuario.update({ id_usuario, email, senha })
+            const updatepainelController = await dbpainelController.update({ id_usuario, email, senha })
 
         } catch (error) {}
             console.log("error")  
@@ -13,5 +13,5 @@ const updatepainelUsuario = {
 
     };
 
-module.exports = updatepainelUsuario;
+module.exports = updatepainelController;
 
