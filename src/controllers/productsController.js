@@ -20,12 +20,17 @@ const productsController = {
 		const id = req.params.id
 		const product = products.find(product => product.id == id)
 		res.render("detalhesProduto", {
-			product,
-			toThousand
+			productDetail: product,
 		})
 	},
 
-	
+	// allProduct - Detail from one product
+	allProducts: (req, res) => {
+		const product = products.findAll()
+		res.render("home", {
+			products: product,
+		})
+	},
 
 	// Create - Form to create
 	create: (req, res) => {
