@@ -8,11 +8,14 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER,
             primaryKey: true
           },
-          nome: {
+          name: {
             type: dataTypes.STRING
           },
-          preco: {
+          price: {
             type: dataTypes.FLOAT
+          },
+          description:{
+            type: dataTypes.STRING
           }
          
         }, 

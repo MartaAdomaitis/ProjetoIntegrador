@@ -8,15 +8,16 @@
   </header> 
   <main>
     <h1 class="titulo">Promoção do Dia</h1>
-
+    <% for(let i=0; i <= 5; i ++) {%>
     <section class="flex">
     <div class="imagem1">
-      <img src= "gp.png" alt="">
-      <p><b>R$ 150,00</b></p>
+      <img src= "mockupjogo.jpg" alt="">
+      <p><b>products[i].name</b></p>
+        <p><b>products[i].price</b></p>
       <p>Frete Grátis</p>
-      <p>COMPRAR</p>
+      <button>COMPRAR</button>
     </div>
-    <div>
+    <!-- <div>
         <img src="horizon.png" alt="">
         <p><b>R$ 230,00</b></p>
      <p>Frete Grátis</p>
@@ -40,9 +41,9 @@
         <p><b>R$ 225,00</b></p>
         <p>Frete Grátis</p>
      <p>COMPRAR</p>
-    </div>
+    </div> -->
     </section>
-
+    <%} %>
     <h2>Categorias</h>
     <section class="flex2">
       <div>
@@ -69,63 +70,68 @@
     <h3>JOGOS MAIS PROCURADOS</h3>
 
     <section class="procurados">
+      <% for(let i=0; i <= 5; i ++) {%>
       <div>
-        <img src="assassins.jpg" alt="">
-        <p><b>R$ 189,00</b></p>
+        <img src="mockupjogo.jpg" alt="">
+        <p><b>products[i].name</b></p>
+        <p><b>products[i].price</b></p>
         <p>Frete Grátis</p>
       </div>
-      <div>
+      <!-- <div>
       <img src="grandtheft.jpg" alt="">
-      <p><b>R$ 353,00</b></p>
+      <p><b>products[i].preco</b></p>
         <p>Frete Grátis</p>
       </div>
       <div>
       <img src="horizon.png" alt="">
-      <p><b>R$ 123,00</b></p>
+      <p><b>products[i].preco</b></p>
         <p>Frete Grátis</p>
       </div>
       <div>
       <img src="knack.jpg" alt="">
-      <p><b>R$ 225,00</b></p>
+      <p><b>products[i].preco</b></p>
         <p>Frete Grátis</p>
       </div>
       <div>
       <img src="watch.jpg" alt="">
-      <p><b>R$ 210,00</b></p>
-        <p>Frete Grátis</p>
+      <p><b>products[i].preco</b></p>
+        <p>Frete Grátis</p> -->
       </div>
     </section>
     <br>
-
+<%} %>
     <h3>RECÉM LANÇADOS</h3>
 
     <section class="lancados">
+      <% for(let i=0; i <= 5; i ++) {%>
       <div>
-        <img src="godOfWar.jpg" alt="">
-        <p><b>R$ 199,00</b></p>
+        <img src="mockupjogo.jpg" alt="">
+        <p><b>products[i].name</b></p>
+        <p><b>products[i].price</b></p>
         <p>Frete Grátis</p>
       </div>
-      <div>
+      <!-- <div>
       <img src="granturismo.jpg" alt="">
-      <p><b>R$ 296,00</b></p>
+      <p><b>products[i].preco</b></p>
         <p>Frete Grátis</p>
       </div>
       <div>
       <img src="tomb.jpg" alt="">
-      <p><b>R$ 135,00</b></p>
+      <p><b>products[i].preco</b></p>
         <p>Frete Grátis</p>
       </div>
       <div>
       <img src="spider.png" alt="">
-      <p><b>R$ 210,90</b></p>
+      <p><b>products[i].preco</b></p>
         <p>Frete Grátis</p>
       </div>
       <div>
       <img src="gp.png" alt="">
-      <p><b>R$ 126,90</b></p>
+      <p><b>products[i].preco</b></p>
         <p>Frete Grátis</p>
-      </div>
+      </div> -->
     </section> 
+    <%} %>
   </body>
 </main>
   <footer>
