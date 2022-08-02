@@ -6,7 +6,7 @@ const multer = require("multer");
 const productsController = require('../controllers/productsController');
 
 /*** GET ALL PRODUCTS ***/ 
-router.get("/detalheProduto", productsController.detail);
+router.get("/detalhesProduto", productsController.detail);
 router.get("/categoriaProduto", productsController.index)
 
 /*** CREATE ONE PRODUCT ***/ 
