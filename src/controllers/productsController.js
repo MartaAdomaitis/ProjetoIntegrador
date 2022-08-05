@@ -28,9 +28,10 @@ const productsController = {
 
 	// allProduct - Detail from one product
 	allProducts: (req, res) => {
-		const product = products.findAll()
+		// const product = products.findAll()
+
 		res.render("home", {
-			products: product,
+			products: products,
 		})
 	},
 

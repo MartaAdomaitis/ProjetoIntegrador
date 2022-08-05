@@ -8,18 +8,20 @@
   </header> 
   <main>
     <h1 class="titulo">Promoção do Dia</h1>
+
     <% for(let i=0; i <= 5; i ++) {%>
     <section class="flex">
     <div class="imagem1">
       <img src= "mockupjogo.jpg" alt="">
-      <p><b> product[i].name</b></p>
-        <p><b>product[i].price </b></p>
+      <p><b> <%= products[i].name %></b></p>
+        <p><b><%= products[i].price %> </b></p>
       <p>Frete Grátis</p>
       <a href="http://localhost:3000/carrinho"> <button src= "mockupjogo.jpg">COMPRAR</button> </a>
     </div>
     
     </section>
     <%} %>
+
     <h2>Categorias</h>
     <section class="flex2">
       <div>
