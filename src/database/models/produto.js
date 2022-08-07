@@ -1,37 +1,41 @@
-module.exports = (sequelize, dataTypes) => {
+const db = require('./db');
 
-    const produto = sequelize.define(
-        'Produto', 
-        {
+    const Produto = db.sequelize.define('produto', {
             // Model attributes are defined here
           id: {
-            type: dataTypes.INTEGER,
-            primaryKey: true
+            type: db.Sequelize.INTEGER,
+            primaryKey: true,
+            autoIncrement:true,
+            allowNull: false
           },
           name: {
-            type: dataTypes.STRING
-          },
+            type:db.Sequelize.STRING,
+            allowNull: false},
+          
           price: {
-            type: dataTypes.FLOAT
+            type: db.Sequelize.FLOAT,
+            allowNull: false
           },
           description:{
-            type: dataTypes.STRING
+            type: db.Sequelize.STRING
           }
          
         }, 
         {
             tableName: 'produto',
             timestamps: false
-        }
+        },
     )
-    produto.associate = (models) => {
+        Produto.sync();
+    
+    Produto.associate = (models) => {
       produto.belongsTo(models.ProductType, {
         as: 'category',
         foreignKey: 'product_type'
       })
     }
 
-    produto.associate = (models) => {
+    Produto.associate = (models) => {
       produto.belongsToMany(models.Store, {
         through: 'stores_produto',
         as: 'stores',
@@ -42,5 +46,4 @@ module.exports = (sequelize, dataTypes) => {
     }
 
 
-    return produto
-}
+    module.exports = {Produto};

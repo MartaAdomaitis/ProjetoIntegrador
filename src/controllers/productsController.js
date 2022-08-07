@@ -1,5 +1,7 @@
 const fs = require('fs');
 const path = require('path');
+const Produto = require ("../database/models/Produto.js")
+
 
 const productsFilePath = path.join(__dirname, '../data/produtoDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -27,14 +29,15 @@ const productsController = {
 	},
 
 	// allProduct - Detail from one product
-	allProducts: (req, res) => {
-		// const product = products.findAll()
-
-		res.render("home", {
-			products: products,
+	allProducts: ("/home", (req, res) => {
+		Produto.findAll().then((valores)=>{
+			res.render("home", {
+				valores,
+			})
+		}).catch((err)=>{
+console.log("Houve um erro: ${err}");
 		})
-	},
-
+	}),
 	// Create - Form to create
 	create: (req, res) => {
 		res.render('product-create-form')

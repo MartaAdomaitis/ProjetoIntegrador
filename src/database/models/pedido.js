@@ -1,19 +1,21 @@
-module.exports = (sequelize, DataType) => {
-    const Pedido = sequelize.define('Pedido', {
+const db = require('./db');
+
+    const Pedido = db.sequelize.define('pedido', {
                
-        id_pedido:{
-            type:DataType.INTEGER,
+        id:{
+            type:db.Sequelize.INTEGER,
             primaryKey:true,
-            auto_increment:true
+            auto_increment:true,
+            allowNull: false
         },
         
         status:{
-            type:DataType.STRING,
+            type:db.Sequelize.STRING,
             allowNull:false
         },
         
         fk_usuario:{
-            type:DataType.INTEGER,
+            type:db.Sequelize.INTEGER,
             allowNull:false,
         },    
     },
@@ -23,6 +25,7 @@ module.exports = (sequelize, DataType) => {
     }
     )
 
+    Pedido.sync();
     Pedido.associate = (models) => {
         Pedido.belongsTo(modelsUsuario, {
             foreignKey: 'fk_usuario',
@@ -36,5 +39,4 @@ module.exports = (sequelize, DataType) => {
             })
     }
 
-    return Pedido
-}
+    module.exports = {Pedido};
