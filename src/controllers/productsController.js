@@ -30,12 +30,13 @@ const productsController = {
 
 	// allProduct - Detail from one product
 	allProducts: ("/home", (req, res) => {
+		const Produto = require ("../database/models/Produto.js").Produto
 		Produto.findAll().then((valores)=>{
 			res.render("home", {
 				valores,
 			})
 		}).catch((err)=>{
-console.log("Houve um erro: ${err}");
+console.log("Houve um erro: " + err);
 		})
 	}),
 	// Create - Form to create

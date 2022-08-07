@@ -9,7 +9,7 @@ const db = require('./db');
             allowNull: false
         },
        
-        name: {
+        nome: {
             type:db.Sequelize.STRING,
             allowNull: false},
         
@@ -17,7 +17,7 @@ const db = require('./db');
             type:db.Sequelize.STRING,
             allowNull: false},
 
-        adress:{
+        endereco:{
              type:db.Sequelize.STRING,
              allowNull: false},
         

@@ -4,7 +4,7 @@ const db = require('../database/models/db');
 const express = require('express');
 const bodyParser = require("body-parser");
 
-const Usuario = require ("../database/models/Usuario.js")
+const Usuario = require ("../database/models/Usuario.js").Usuario
 
 const productsFilePath = path.join(__dirname, '../data/produtoDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -29,17 +29,18 @@ const usersController = {
 	const telefone = req.body.telefone;
 	const cpf = req.body.cpf;
 
-	Usuario.create({
+	const criacao = Usuario.create({
 	nome: nome,	
 	email: email,
 	senha: senha,
 	endereco: endereco,
+	telefone: telefone,
+	cpf: cpf
 	}).then(()=>{
 		console.log("Cadastrado com sucesso!");
-		req.session.sucess = true
-		return res.redirect('/painelusuario');
+		res.redirect('/');
 	}).catch((err)=>{
-console.log("Ops, houve um erro: ${err}")
+console.log("Ops, houve um erro:" + err)
 	})
 },
 	search: (req, res) => {
