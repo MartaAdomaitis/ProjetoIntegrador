@@ -1,33 +1,49 @@
-module.exports = (sequelize, DataType) => {
-   
-    const Usuario = sequelize.define('Usuario', {
+const db = require('./db');
+
+    const Usuario = db.sequelize.define('usuario', {
        
-        id_usuario:{
-            type:DataType.INTEGER,
+        id:{
+            type:db.Sequelize.INTEGER,
             primaryKey:true,
-            auto_increment:true
+            autoIncrement:true,
+            allowNull: false
         },
        
-        nome: DataType.STRING,
+        nome: {
+            type:db.Sequelize.STRING,
+            allowNull: false},
         
         email:{
-            type:DataType.STRING,
-            allowNull:true,
-        },
+            type:db.Sequelize.STRING,
+            allowNull: false},
+
+        endereco:{
+             type:db.Sequelize.STRING,
+             allowNull: false},
         
-        senha: DataType.STRING
+        cpf:{
+        type:db.Sequelize.INTEGER,
+        allowNull: false},
+
+        telefone:{
+            type:db.Sequelize.INTEGER,
+            allowNull: false,},
+        
+        senha: {type: db.Sequelize.STRING,
+            allowNull: false,}
     },{
         
         tableName:'usuario',
         timestamps:false
     })
 
-    Usuario.associate = (models) => {
+    Usuario.sync();
+    
+    Usuario.associate= (models) => {
         Usuario.hasMany(models.Pedido, {
             foreignKey: 'fk_usuario',
             as: 'pedidos'
         })
     }
 
-    return Usuario
-}
+    module.exports = {Usuario};

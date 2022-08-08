@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const multer = require("multer");
 
+
 const usersController = require('../controllers/usersController');
 router.get('/cadastro', usersController.index); 
 router.get('/painelusuario', usersController.painel);
@@ -18,6 +19,7 @@ router.get('/search', usersController.search)
 //router.get('/creat', usersController.creat)
 //router.post('/creat', usersController.store)
 
+router.post("/cad", usersController.create)
 
 //router.get('/editar/:id', usersController.edit)
 //router.put('/editar/:id', usersController.update)
