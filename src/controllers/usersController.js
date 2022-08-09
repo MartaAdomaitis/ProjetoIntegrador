@@ -3,8 +3,10 @@ const path = require('path');
 const db = require('../database/models/db');
 const express = require('express');
 const bodyParser = require("body-parser");
-
+const bcrypt = require("bcrypt")
+const passport = require("passport")
 const Usuario = require ("../database/models/Usuario.js").Usuario
+const auth = require('../database/config/auth')(passport);
 
 const productsFilePath = path.join(__dirname, '../data/produtoDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -43,15 +45,14 @@ const usersController = {
 console.log("Ops, houve um erro:" + err)
 	})
 },
-	search: (req, res) => {
-		const search = req.query.keywords;
-		const productsToSearch = products.filter(product => product.name.toLowerCase().includes(search));	
-		res.render('results', { 
-			products: productsToSearch, 
-			search,
-			toThousand,
-		});
-	},
+	
+login:(req,res, next) => {
+passport.authenticate('local',{
+	successRedirect:"/painelusuario",
+	failureRedirect:"/",
+	failureFlash: true
+})(req, res, next)
+},
 	painel:(req, res) => {
 		res.render('painelUsuario');
 	},

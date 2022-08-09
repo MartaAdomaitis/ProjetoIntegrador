@@ -11,13 +11,12 @@
 
     <% for(let i=0; i <= 5; i ++) {%>
     <section class="flex">
-    <div class="imagem1">
-      <img src= "mockupjogo.jpg" alt="">
-      <p><b> <%= products[i].name %></b></p>
-        <p><b><%= products[i].price %> </b></p>
+  
+      <img src="mockupjogo.jpg" alt="">
+      <p><b> <%= products[i].nome %></b></p>
+        <p><b><%= products[i].preco %> </b></p>
       <p>Frete Grátis</p>
-      <a href="http://localhost:3000/carrinho"> <button src= "mockupjogo.jpg">COMPRAR</button> </a>
-    </div>
+      <a href="http://localhost:3000/carrinho"><button src= "mockupjogo.jpg">COMPRAR</button> </a>
     
     </section>
     <%} %>
@@ -45,16 +44,15 @@
     </section>
     <br>
 
-    <h3>JOGOS MAIS PROCURADOS</h3>
+    <!-- <h3>JOGOS MAIS PROCURADOS</h3>
 
     <section class="procurados">
       <% for(let i=0; i <= 5; i ++) {%>
       <div>
-        <img src="mockupjogo.jpg" alt="">
-        <p><b>products[i].name</b></p>
-        <p><b>products[i].price</b></p>
-        <p>Frete Grátis</p>
-      </div>
+        <img src= <%= products[i].img %> alt="">
+        <p><b> <%= products[i].nome %></b></p>
+          <p><b><%= products[i].preco %> </b></p>
+      </div> -->
       <!-- <div>
       <img src="grandtheft.jpg" alt="">
       <p><b>products[i].preco</b></p>
@@ -74,7 +72,7 @@
       <img src="watch.jpg" alt="">
       <p><b>products[i].preco</b></p>
         <p>Frete Grátis</p> -->
-      </div>
+      <!-- </div>
     </section>
     <br>
 <%} %>
@@ -83,11 +81,11 @@
     <section class="lancados">
       <% for(let i=0; i <= 5; i ++) {%>
       <div>
-        <img src="mockupjogo.jpg" alt="">
-        <p><b>products[i].name</b></p>
-        <p><b>products[i].price</b></p>
+        <img src= <%= products[i].img %> alt="">
+      <p><b> <%= products[i].nome %></b></p>
+        <p><b><%= products[i].preco %> </b></p>
         <p>Frete Grátis</p>
-      </div>
+      </div> -->
       <!-- <div>
       <img src="granturismo.jpg" alt="">
       <p><b>products[i].preco</b></p>
@@ -108,8 +106,8 @@
       <p><b>products[i].preco</b></p>
         <p>Frete Grátis</p>
       </div> -->
-    </section> 
-    <%} %>
+    <!-- </section>  -->
+    <!-- <%} %> -->
   </body>
 </main>
   <footer>

@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const Produto = require ("../database/models/Produto.js")
+const Produto = require ("../database/models/Produto.js").Produto
 
 
 const productsFilePath = path.join(__dirname, '../data/produtoDataBase.json');
@@ -20,23 +20,48 @@ const productsController = {
 	// Detail - Detail from one product
 	detail: (req, res) => {
 	const id = req.params.id
-		const product = products.find(product => product.id == id)
+		const detalhe = Produto.find(product => product.id == id)
 		res.render("detalhesProduto", {
 			productDetail: product,
 
 		})
 	
 	},
+	// Search for Products Detail - Detail from one product
+
+	search: (req, res) => {
+		const search = req.query.keywords;
+		const productsToSearch = products.filter(product => product.name.toLowerCase().includes(search));	
+		res.render('results', { 
+			products: productsToSearch, 
+			search,
+			toThousand,
+		});
+	},
+	
+	searchDetail: (req, res) => {
+		const buscaProduto = req.body.nome
+			const acharProduto = Produto.find().then(()=>{(produto => produto.nome == produto)
+			res.render("home", {
+				produto: produto,
+	
+			}).catch((err)=>{
+				console.log("Houve um erro: " + err);
+				res.render ("Houve um erro: " + err);
+			})
+		}
+			)},
+		
 
 	// allProduct - Detail from one product
 	allProducts: ("/home", (req, res) => {
-		const Produto = require ("../database/models/Produto.js").Produto
 		Produto.findAll().then((valores)=>{
 			res.render("home", {
-				valores,
+				products: valores,
 			})
 		}).catch((err)=>{
 console.log("Houve um erro: " + err);
+res.render ("Houve um erro: " + err);
 		})
 	}),
 	// Create - Form to create

@@ -13,13 +13,14 @@ router.get('/painelusuario', usersController.painel);
 //router.get('/find/:id', usersController.findOne)
 
 
-router.get('/search', usersController.search)
+// router.get('/search', usersController.search)
 
 
 //router.get('/creat', usersController.creat)
 //router.post('/creat', usersController.store)
 
 router.post("/cad", usersController.create)
+router.post("/cadastro", usersController.login)
 
 //router.get('/editar/:id', usersController.edit)
 //router.put('/editar/:id', usersController.update)

@@ -1,6 +1,13 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
+const sessions = require('express-session');
+const flash = require("connect-flash")
+const passport = require("passport")
+const auth = require('./src/database/config/auth')(passport);
+const PORT = 3000;
+
 
 const rotaIndex = require('./src/routes/index');
 const rotaProdutos = require('./src/routes/produto');
@@ -11,7 +18,35 @@ const Usuario = require ("./src/database/models/Usuario.js")
 const app = express();
 const db = require('./src/database/models/index')
 
-app.use(bodyParser.urlencoded({extended:false}))
+//sessão
+// criando 24 hours com milisegundos
+const oneDay = 1000 * 60 * 60 * 24;
+
+//sessão middleware
+app.use(sessions({
+  secret: "segredo",
+  saveUninitialized:true,
+  cookie: { maxAge: oneDay },
+  resave: true
+}));
+app.use(passport.initialize())
+app.use(passport.session())
+app.use(flash())
+
+//Middleware
+app.use((req, res, next)=>{
+  res.locals.success_msg = req.flash("success_msg")
+  res.locals.error_msg = req.flash("error_msg")
+  next()
+})
+
+// parsing the incoming data
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({extended:true}))
+
+// cookie parser middleware
+app.use(cookieParser());
 
 app.use(rotaIndex);
 app.use(rotaProdutos);
@@ -43,9 +78,6 @@ app.use( express.static( "public/img" ));
 
 app.set('view engine', 'ejs');
 
-app.post('/cad', (req,res)=>{
-  console.log(req.body.nome, );
-});
 
 module.exports = app;
 
