@@ -1,10 +1,5 @@
 [
  {
-  "type": "header",
-  "version": "5.2.0",
-  "comment": "Export to JSON plugin for PHPMyAdmin"
- },
- {
   "type": "database",
   "name": "projeto_integrador"
  },
@@ -56,11 +51,5 @@
     "description": "Jogo Xbox Marvel para faixa etária a partir dos 04 anos de idade."
    }
   ]
- },
- {
-  "id": null,
-  "emailLogin": "martaadomaitis@gmail.com",
-  "senhaLogin": "555",
-  "image": "default-image.png"
  }
 ]
