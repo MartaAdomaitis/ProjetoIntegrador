@@ -12,19 +12,17 @@
         <div class="cadastro">
         <div class="Login">
             <h2>LOGIN</h2>
-        <form id="formularioLogin">
+        <form id="formularioLogin" action="/cadastro" method="post">
             <div class="email">
                 <label for="email">E-mail</label>
-                <input type="email" id="email1"/>
+                <input type="email" id="email1" name="emailLogin" required/>
             </div>
             <div class="password">
                 <label for="password">Senha</label>
-                <input type="password" id="password1"/>
+                <input type="password" id="password1" name="senhaLogin" required/>
             </div>
-          
-            <a href="http://localhost:3000/painelusuario">
-                <button>Enviar</button>
-            </a>
+                <button type="submit">Enviar</button>
+            
         </form>
     </div>
 
@@ -32,27 +30,27 @@
     <form action="/cad" method="post" id="formularioCadastro" >
         <div class="name">
             <label for="name">Nome</label>
-            <input type="text" id="name" name="nome"/>
+            <input type="text" id="name" name="nome" required/>
         </div>
         <div class="email">
             <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" />
+            <input type="email" id="email" name="email" required/>
         </div>
         <div class="password">
             <label for="password">Senha</label>
-            <input type="password" id="password" name="senha"/>
+            <input type="password" id="password" name="senha" required/>
         </div>
         <div class="adress">
             <label for="adress">Endereço</label>
-            <input type="text" id="adress" name="endereco"/>
+            <input type="text" id="adress" name="endereco" required/>
         </div>
         <div class="cpf">
             <label for="cpf">CPF</label>
-            <input type="number" id="cpf" name="cpf"/>
+            <input type="number" id="cpf" name="cpf" required/>
         </div>
         <div class="telefone">
             <label for="telefone">Telefone</label>
-            <input type="number" id="telefone" name="telefone"/>
+            <input type="number" id="telefone" name="telefone" required/>
         </div>
     <button action="/cad" method="post" >Enviar</button></a>
     </form>

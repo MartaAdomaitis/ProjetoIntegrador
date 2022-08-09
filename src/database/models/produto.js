@@ -8,11 +8,11 @@ const db = require('./db');
             autoIncrement:true,
             allowNull: false
           },
-          name: {
+          nome: {
             type:db.Sequelize.STRING,
             allowNull: false},
           
-          price: {
+          preco: {
             type: db.Sequelize.FLOAT,
             allowNull: false
           },

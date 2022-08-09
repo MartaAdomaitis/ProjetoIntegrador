@@ -142,12 +142,13 @@ body {
   
   img{
       max-width: 100%;
-      display: block;
   }
+ 
   .flex {
-      display: flex;
-      flex: wrap;
+      display: inline-block;
       max-width: 1200px;
+      flex-direction: row;
+      max-width: 30%;
       margin: 0 auto;
       
       }
