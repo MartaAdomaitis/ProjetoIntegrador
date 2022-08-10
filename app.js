@@ -4,8 +4,6 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const sessions = require('express-session');
 const flash = require("connect-flash")
-const passport = require("passport")
-const auth = require('./src/database/config/auth')(passport);
 const PORT = 3000;
 
 
@@ -29,9 +27,7 @@ app.use(sessions({
   cookie: { maxAge: oneDay },
   resave: true
 }));
-app.use(passport.initialize())
-app.use(passport.session())
-app.use(flash())
+
 
 //Middleware
 app.use((req, res, next)=>{

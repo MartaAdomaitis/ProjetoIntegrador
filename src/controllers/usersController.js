@@ -4,9 +4,7 @@ const db = require('../database/models/db');
 const express = require('express');
 const bodyParser = require("body-parser");
 const bcrypt = require("bcrypt")
-const passport = require("passport")
 const Usuario = require ("../database/models/Usuario.js").Usuario
-const auth = require('../database/config/auth')(passport);
 
 const productsFilePath = path.join(__dirname, '../data/produtoDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -46,13 +44,29 @@ console.log("Ops, houve um erro:" + err)
 	})
 },
 	
-login:(req,res, next) => {
-passport.authenticate('local',{
-	successRedirect:"/painelusuario",
-	failureRedirect:"/",
-	failureFlash: true
-})(req, res, next)
+login: (req,res) => {
+	const emailUsuario = req.body.emailLogin;
+	const senhaUsuario = req.body.senhaLogin;
+	const loginUser = Usuario.findOne({
+
+	where:{
+	email: emailUsuario,
+	senha: senhaUsuario,
 },
+	})
+	.then((loginUser)=>{
+		if (loginUser != null){
+		console.log("Login realizado com sucesso!");
+		res.redirect('/');}	else{
+		res.redirect('/cadastro');	
+		console.log("Usuário não cadastrado")
+		}
+	}).catch((err)=>{
+		res.redirect('/cadastro');
+console.log("Ops, houve um erro:" + err)
+	})
+},
+
 	painel:(req, res) => {
 		res.render('painelUsuario');
 	},
