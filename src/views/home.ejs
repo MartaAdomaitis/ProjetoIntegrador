@@ -20,104 +20,27 @@
     <h1 class="titulo">Promoção do Dia</h1>
 
     <% for(let i=0; i <= 5; i ++) {%>
-    <section class="flex">
+    <section class="produto-item">
   
-      <img src="mockupjogo.jpg" alt="">
-      <p><b> <%= products[i].nome %></b></p>
-        <p><b><%= products[i].preco %> </b></p>
+       <img class="produto-item-img" src="<%= products[i].img %>"> 
+      <p class="produto-item-nome"><b> <%= products[i].nome %></b></p>
+        <p class="produto-item-preco"><b>R$<%= products[i].preco %> </b></p>
       <p>Frete Grátis</p>
       <a href="http://localhost:3000/carrinho"><button src= "mockupjogo.jpg">COMPRAR</button> </a>
     
     </section>
     <%} %>
 
-    <h2>Categorias</h>
+    <h2></h>
     <section class="flex2">
-      <div>
-        <img src="playstation.jpg" alt="">
-        <p>VIDEO GAMES</p>
-      </div>
-      <div>
-      <img src="psp.jpg" alt="">
-       <p>PSP</p>
-      </div>
-      <div>
-      <img src="console.jpg" alt="">
-      <p>CONSOLES</p>
-      </div>
-    </section>
-
-    <section class="anuncio">
       <div class="digital">
-      <img src="anuncio.jpg">
-      </div>
+        <img src="anuncio.jpg">
+        </div>
     </section>
+
+  
     <br>
 
-    <!-- <h3>JOGOS MAIS PROCURADOS</h3>
-
-    <section class="procurados">
-      <% for(let i=0; i <= 5; i ++) {%>
-      <div>
-        <img src= <%= products[i].img %> alt="">
-        <p><b> <%= products[i].nome %></b></p>
-          <p><b><%= products[i].preco %> </b></p>
-      </div> -->
-      <!-- <div>
-      <img src="grandtheft.jpg" alt="">
-      <p><b>products[i].preco</b></p>
-        <p>Frete Grátis</p>
-      </div>
-      <div>
-      <img src="horizon.png" alt="">
-      <p><b>products[i].preco</b></p>
-        <p>Frete Grátis</p>
-      </div>
-      <div>
-      <img src="knack.jpg" alt="">
-      <p><b>products[i].preco</b></p>
-        <p>Frete Grátis</p>
-      </div>
-      <div>
-      <img src="watch.jpg" alt="">
-      <p><b>products[i].preco</b></p>
-        <p>Frete Grátis</p> -->
-      <!-- </div>
-    </section>
-    <br>
-<%} %>
-    <h3>RECÉM LANÇADOS</h3>
-
-    <section class="lancados">
-      <% for(let i=0; i <= 5; i ++) {%>
-      <div>
-        <img src= <%= products[i].img %> alt="">
-      <p><b> <%= products[i].nome %></b></p>
-        <p><b><%= products[i].preco %> </b></p>
-        <p>Frete Grátis</p>
-      </div> -->
-      <!-- <div>
-      <img src="granturismo.jpg" alt="">
-      <p><b>products[i].preco</b></p>
-        <p>Frete Grátis</p>
-      </div>
-      <div>
-      <img src="tomb.jpg" alt="">
-      <p><b>products[i].preco</b></p>
-        <p>Frete Grátis</p>
-      </div>
-      <div>
-      <img src="spider.png" alt="">
-      <p><b>products[i].preco</b></p>
-        <p>Frete Grátis</p>
-      </div>
-      <div>
-      <img src="gp.png" alt="">
-      <p><b>products[i].preco</b></p>
-        <p>Frete Grátis</p>
-      </div> -->
-    <!-- </section>  -->
-    <!-- <%} %> -->
   </body>
 </main>
   <footer>

@@ -5,7 +5,7 @@ const express = require('express');
 const bodyParser = require("body-parser");
 const bcrypt = require("bcrypt")
 const Usuario = require ("../database/models/Usuario.js").Usuario
-
+const {check} = require ("express-validator");
 const productsFilePath = path.join(__dirname, '../data/produtoDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -17,6 +17,8 @@ const visited = products.filter(function(product){
 const inSale = products.filter(function(product){
 	return product.category == 'in-sale'
 })
+
+
 const usersController = {
 	index: (req, res) => {
 		res.render('cadastro');
@@ -28,7 +30,7 @@ const usersController = {
 	const endereco = req.body.endereco;
 	const telefone = req.body.telefone;
 	const cpf = req.body.cpf;
-
+	
 	const criacao = Usuario.create({
 	nome: nome,	
 	email: email,
@@ -52,8 +54,8 @@ login: (req,res) => {
 		if (err) {
 			next(err);
 	} else {
-        if (bcrypt.compareSync(req.body.senhaLogin, Usuario.senha)) {
-          const token = jwt.sign({ id: Usuario.id }, req.app.get('secretKey'), { expiresIn: '1h' });
+        if (bcrypt.compareSync(senhaUsuario, Usuario.senha)) {
+          const token = jwt.sign({ id: Usuario.id }, req.app.get(session.secret), { expiresIn: 3600000 });
           res.json({ status: "Sucesso", message: "Usuário encontrado!", data: { user: Usuario, token: token } });
         } else {
           res.json({ status: "error", message: "E-mail e senha inválidos", data: null });

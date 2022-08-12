@@ -144,7 +144,7 @@ body {
       max-width: 100%;
   }
  
-  .flex {
+  .produto-item {
       display: inline-block;
       max-width: 1200px;
       flex-direction: row;
@@ -152,15 +152,15 @@ body {
       margin: 0 auto;
       
       }
-  .flex > div{
+  .produto-item > div{
       flex: 1 1 200px;
       margin: 15px;
   }
-  .flex{
+  .produto-item{
     transition: all 0.5s;
     cursor: pointer;
 }
-.flex:hover{
+.produto-item:hover{
     -webkit-filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
     filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
 }

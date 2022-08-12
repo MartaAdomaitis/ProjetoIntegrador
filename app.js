@@ -3,7 +3,6 @@ const path = require('path');
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const sessions = require('express-session');
-const flash = require("connect-flash")
 const PORT = 3000;
 
 
