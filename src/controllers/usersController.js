@@ -56,6 +56,21 @@ passport.authenticate('local',{
 	painel:(req, res) => {
 		res.render('painelUsuario');
 	},
+
+	allUsuario: ("/painelusuario", (req, res) => {
+		Usuario.findAll().then((valores)=>{
+			res.render("painelUsuario", {
+				usuario: valores,
+			})
+		}).catch((err)=>{
+console.log("Houve um erro: " + err);
+res.render ("Houve um erro: " + err);
+		})
+	}),
+
+
+
 };
+
 
 module.exports = usersController;

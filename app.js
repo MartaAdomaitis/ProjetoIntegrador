@@ -53,18 +53,20 @@ app.use(rotaProdutos);
 app.use(rotaCarrinho);
 app.use(rotaUsers);
 
-// app.get('/painelusuario',(req,res)=>{
-//   res.render("painelUsuario")
-// });
-app.get('/painelusuario',(req,res)=>{     // alteração para verificar qual usuario esta conectado
-  usuario.findByPk(1).then (usuario => {  // realizada no dia 08/08/2022 Amanda
-    console.log(usuario)
-  }).catch((error)=>{ 
-    console.log('Houve um erro:');
-  })
+ app.get('/painelusuario',(req,res)=>{
+  res.render("painelUsuario")
+});
+
+
+// app.get('/painelusuario',(req,res)=>{     // alteração para verificar qual usuario esta conectado
+//   usuario.findByPk(1).then (usuario => {  // realizada no dia 08/08/2022 Amanda
+//     console.log(usuario)
+//   }).catch((error)=>{ 
+//     console.log('Houve um erro:');
+//   })
   
     
-  });
+//   });
 
 
 app.listen(3000, ()=>{
