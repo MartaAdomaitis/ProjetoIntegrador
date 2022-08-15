@@ -1,30 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head><%- include("./partials/head") %>
-    <meta charset="UTF-8">
-    <link rel='stylesheet' href='style.css'/>
-    <title>Document</title>
-</head>
 <%- include("./partials/header") %>
-<div>
-        <div class="container-cliente">
-            <div class="container-perfil-cliente">
-                <div class="foto-cliente"><img width="100 " src="./perfil.png" >
-                <p class="Editar perfil">Editar perfil</p>
-            </div>
-                <div class="engrenagem"><img width="50" src="./engrenagem.png" ></div>
-                <div class="texto-cliente">
-                <p class="Bem-vindo-cliente">Bem-vindo, Nome do cliente</p>
-                <p class="email-cliente">E-mail do cliente</p>
-            </div>
-            </div>
-        
-            <div class="container-saldo-cliente">
-                <p class="saldo-cliente">Saldo do cliente</p>
-                <p class="valor-disponivel-cliete">R$VALOR DISPONÍVEL</p>
-            </div>
+<body>
+    <header>
+        <%- include("./partials/header") %>
+      </header> 
+         <main class="main-home m-5 d-flex justify-content-center">
 
-        </div>
+           <div class="perfil">
+            <h1 class="text-center">PERFIL DO CLIENTE</h1>
+            <h3 class="text-center">Informações sobre:  </h3>
+           </div>
+               
+           <form action="" method="post"></form>
+
+            <div class="form-floating p-1 col-md-8">
+              
+                <label for="nome" class="form-label">Nome: </label> 
+                <input type="text" name="nome" class="form-control" value=""> 
+                <button type="submit" class="btn-outline-success align-middle">Editar</button>  
+                <button type="delete" class="btn-outline-success align-middle">Apagar</button>       
+            </div>  
+            <br>
+       
+            <div class="form-floating p-1 col-md-8">
+                <label for="cpf" class="form-label">CPF:</label>
+                <input type="text" name="nome" class="form-control" value=""> 
+                <button type="submit" class="btn-outline-success align-middle">Editar</button>  
+                <button type="delete" class="btn-outline-success align-middle">Apagar</button>
+            </div>
+            <br>
+
+             <div class="form-floating p-1 col-md-8">
+                <label for="CEP" class="form-label">CEP:</label> 
+                <input type="text" name="nome" class="form-control" value=""> 
+                <button type="submit" class="btn-outline-success align-middle">Editar</button> 
+                <button type="delete" class="btn-outline-success align-middle">Apagar</button> 
+                                              
+            </div>
+            <br>
+
+            <div class="form-floating p-1 col-md-8">
+                <label for="endereco" class="form-label">Endereço:</label>   
+                <input type="text" class="form-control" name="endereco" value="">
+                <button type="submit" class="btn-outline-success align-middle">Editar</button>  
+                <button type="delete" class="btn-outline-success align-middle">Apagar</button>                           
+            </div>   
+            
+            </div>
+        </div> 
+        
+
+
+
     <div class="container-principal1">
         <h2>INFORMAÇÃO SOBRE SEUS PRODUTOS</h2>
         <div class="info-container">
@@ -80,5 +106,7 @@
 </div>
 
 </body>
-
-</html>
+<footer>
+    <%- include("./partials/footer") %>
+</footer> 
+</html> 

@@ -644,72 +644,114 @@ button{
   /*painelUsuario*/
   
   
-  .info-container{
-    align-items: center;
-    width: 80%;
-    display:grid;
-     grid-template-columns:1fr 1fr
-}
-.container-principal1{
-    width: 80%;
-    display: block;
-    align-items: center;
-    position:absolute;
-    z-index: 10;
-    left: 400px;
-    bottom: 3;
-
-}
-.produto{
-    width: 100%;
-    display: flex;
-}
-
-.foto{
-   margin-right: 20px;
-}
-.container-cliente{
-    display: flex;
-    align-items: center;
-    width: 80%;
-    display:grid;
-     grid-template-columns:1fr 1fr
-
-}
-.container-perfil-cliente{
-    display: flex;
-    
-
-}
-.texto-cliente{
-    max-width: 300px;
-    align-self: center;
-    margin: 0 auto;
-    display: flex;
-    
-
-}
-.container-saldo-cliente{
-    display: flex;
-    border: 3px orange;
-    max-width: 300px;
-    align-self: center;
-    margin: 0 auto;
-    display: flex;
-
-}
-.container-dados-cliente{
-      display: block;
-}
-.engrenagem{
-    position:absolute;
-    z-index: 2;
-    top: 9px;
-    left: 700px;
-}
-.foto-cliente{
+  /* .main-container1 {
     position: relative;
-    left: 220px;
+    background-color: #243C84;
+    display: flex;
+    flex-direction: column;
+    margin: 8px -8px;
+    width: auto;
+}
+
+.dados-e-foto {
+    display: flex;
+    
+}
+    
+
+
+.caixa-dados1 {
+    display: flex;
+    flex-direction: column;
+    background-color: cadetblue;
+    border: 2px dotted white;
+    width: 38vw;
+    height: 490px;
+    gap: 26px;
+} */
+
+/* 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap'); */
+
+/*painelUsuario*/
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #EEEEEE;
+
+}
+
+.home {
+    height: 100vh;
+}
+    
+.form-control {
+    background-color: #EEEEEE;
+}
+
+.container-fluid h1 {
+    color: #F66B0E;
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+.container-fluid p {
+    color: #205375;
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+.container-fluid{
+    width: 100%;
+}
+
+.form-control-checkbox{
+    border: none;
+}
+
+.checkbox div label{
+    margin-right: 0.5rem;
+}
+
+.img-prestador img {
+    margin: 2rem;
+    border-radius: 2rem;
+}
+
+.card-carousel{
+    display: flex;
+    width: 20rem;
+    height: 25rem;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+
+
+
+.card-body h5 {
+    color: #F66B0E;
+    font-weight: 800;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .img-prestador {
+        display: none
+    }
+    .container-fluid h1 {
+        font-size: 1rem;
+        margin-top: 3rem;
+    }
+    .body-home {
+        background-image: url("/img/prestador-imagem.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+    .form-control-checkbox {
+        background: none;
+    }
+
+    /* .checkbox input {
+    } */
 }
 
     /*footer*/
