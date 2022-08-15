@@ -22,11 +22,11 @@
     <% for(let i=0; i <= 5; i ++) {%>
     <section class="produto-item">
   
-       <img class="produto-item-img" src="<%= products[i].img %>"> 
+       <img class="produto-item-img" src="mockupjogo.jpg"> 
       <p class="produto-item-nome"><b> <%= products[i].nome %></b></p>
         <p class="produto-item-preco"><b>R$<%= products[i].preco %> </b></p>
       <p>Frete Grátis</p>
-      <a href="http://localhost:3000/carrinho"><button src= "mockupjogo.jpg">COMPRAR</button> </a>
+      <a href="http://localhost:3000/carrinho"><button src= "mockupjogo.jpg" name="adicionar">COMPRAR</button> </a>
     
     </section>
     <%} %>

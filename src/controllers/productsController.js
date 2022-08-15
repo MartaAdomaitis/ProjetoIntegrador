@@ -40,9 +40,11 @@ const productsController = {
 	},
 	
 	searchDetail: (req, res) => {
-		const buscaProduto = req.body.nome
-			const acharProduto = Produto.find().then(()=>{(produto => produto.nome == produto)
-			res.render("home", {
+			const nome = req.body.buscaProdut;
+			var elemento = document.getElementsByName(nome);
+	
+			const acharProduto = Produto.find(nome).then(()=>{(produto => produto.nome == produto)
+			res.render("detalhesProduto", {
 				produto: produto,
 	
 			}).catch((err)=>{

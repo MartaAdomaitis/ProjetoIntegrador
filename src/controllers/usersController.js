@@ -5,7 +5,7 @@ const express = require('express');
 const bodyParser = require("body-parser");
 const bcrypt = require("bcrypt")
 const Usuario = require ("../database/models/Usuario.js").Usuario
-const {check} = require ("express-validator");
+const {body} = require ("express-validator");
 const productsFilePath = path.join(__dirname, '../data/produtoDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -30,7 +30,11 @@ const usersController = {
 	const endereco = req.body.endereco;
 	const telefone = req.body.telefone;
 	const cpf = req.body.cpf;
-	
+
+	body("nome").notEmpty().withMessage('Digite o Nome').isString();
+    body("email").notEmpty().withMessage('Digite Um Email').isEmail();
+    body("senha").notEmpty().withMessage('Digite Uma Senha');
+
 	const criacao = Usuario.create({
 	nome: nome,	
 	email: email,
@@ -46,34 +50,32 @@ console.log("Ops, houve um erro:" + err)
 	})
 },
 	
-login: (req,res) => {
+login: (req, res) => {
+	res.render('cadastro');
 	const emailUsuario = req.body.emailLogin;
 	const senhaUsuario = req.body.senhaLogin;
-	const loginUser = Usuario.findOne({	where:{
-	email: emailUsuario,}}, (err,Usuario)=>{
-		if (err) {
-			next(err);
-	} else {
-        if (bcrypt.compareSync(senhaUsuario, Usuario.senha)) {
-          const token = jwt.sign({ id: Usuario.id }, req.app.get(session.secret), { expiresIn: 3600000 });
-          res.json({ status: "Sucesso", message: "Usuário encontrado!", data: { user: Usuario, token: token } });
-        } else {
-          res.json({ status: "error", message: "E-mail e senha inválidos", data: null });
-        }
-	}})
-	.then((loginUser)=>{
-		if (loginUser != null){
-		console.log("Login realizado com sucesso!");
-		res.redirect('/');}	else{
-		res.redirect('/cadastro');	
-		console.log("Usuário não cadastrado")
-		}
-	}).catch((err)=>{
-		res.redirect('/cadastro');
-console.log("Ops, houve um erro:" + err)
-	})
-},
+	let user= Usuario
 
+	body("email").notEmpty().withMessage('Digite Um Email Valido').isEmail();
+    body("password").notEmpty().withMessage('Digite Uma Senha Valida');
+
+	const senhaValida = (user, password) =>{
+		return bcrypt.compareSync(password, user.password);
+	}
+	const loginUser = ()=>{if (!senhaValida) {
+		return res.send("Senha Inválida")
+}else{
+	Usuario.findOne({	
+		where:{	email: emailUsuario,}
+   }).then((userinfo) => {
+	res.redirect("/")
+	res.send("Login realizado com sucesso")})
+}
+	//    req.session.Usuario = Usuario
+
+	}},
+	
+		
 	painel:(req, res) => {
 		res.render('painelUsuario');
 	},

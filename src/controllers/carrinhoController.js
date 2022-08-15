@@ -10,6 +10,11 @@ const carrinhoController = {
 	index:(req, res) => {
 		res.render('carrinho')
 	},
+	cart:(req,res)=>{
+		const nome = req.body.buscaProduto;
+		var elemento = document.getElementByName(nome);
+addEventListener
+	},
     payment: (req, res) => {
 		res.render("finalizacaoPedido")
 },
