@@ -641,49 +641,15 @@ button{
 }
 
  
-  /*painelUsuario*/
-  
-  
-  /* .main-container1 {
-    position: relative;
-    background-color: #243C84;
-    display: flex;
-    flex-direction: column;
-    margin: 8px -8px;
-    width: auto;
-}
-
-.dados-e-foto {
-    display: flex;
-    
-}
-    
-
-
-.caixa-dados1 {
-    display: flex;
-    flex-direction: column;
-    background-color: cadetblue;
-    border: 2px dotted white;
-    width: 38vw;
-    height: 490px;
-    gap: 26px;
-} */
-
-/* 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap'); */
-
 /*painelUsuario*/
-
-body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #EEEEEE;
+.info-container{
+    display: flex;
+    flex-direction: row;
 
 }
-
-.home {
+/* .home {
     height: 100vh;
-}
+} */
     
 .form-control {
     background-color: #EEEEEE;
@@ -700,59 +666,6 @@ body {
     font-size: 1rem;
 }
 
-.container-fluid{
-    width: 100%;
-}
-
-.form-control-checkbox{
-    border: none;
-}
-
-.checkbox div label{
-    margin-right: 0.5rem;
-}
-
-.img-prestador img {
-    margin: 2rem;
-    border-radius: 2rem;
-}
-
-.card-carousel{
-    display: flex;
-    width: 20rem;
-    height: 25rem;
-    justify-content: center;
-    align-items: center;
-    margin: 1rem;
-}
-
-
-
-.card-body h5 {
-    color: #F66B0E;
-    font-weight: 800;
-}
-
-@media (min-width: 320px) and (max-width: 767px) {
-    .img-prestador {
-        display: none
-    }
-    .container-fluid h1 {
-        font-size: 1rem;
-        margin-top: 3rem;
-    }
-    .body-home {
-        background-image: url("/img/prestador-imagem.png");
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-    }
-    .form-control-checkbox {
-        background: none;
-    }
-
-    /* .checkbox input {
-    } */
-}
   /*login*/
   .loginError{
       font-style: red bold;

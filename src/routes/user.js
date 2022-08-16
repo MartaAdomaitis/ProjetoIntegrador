@@ -7,7 +7,7 @@ const methodOverride = require("method-override")
 
 const usersController = require('../controllers/usersController');
 router.get('/cadastro', cadastroAuth, usersController.index); 
-router.get('/painelusuario/:id/editar', usersController.painel);
+router.get('/painelusuario', usersController.painel);
 
 router.post('/usuario/login', usersController.login);
 router.put('/painelusuario/:id/update', usersController.atualizar);

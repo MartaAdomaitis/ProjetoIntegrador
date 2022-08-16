@@ -6,8 +6,10 @@
          <main class="main-home m-5 d-flex justify-content-center">
 
            <div class="perfil">
-            <h1 class="text-center">PERFIL DO CLIENTE</h1>
+            <h1 class="text-center">Olá <%= userLogged.nome%></h1>
             <h3 class="text-center">Informações sobre:</h3>
+            <h4 class="text-center">Endereço: <%= userLogged.endereco%></h4>
+            <h4 class="text-center">Telefone: <%= userLogged.telefone%></h4>
                             
            </div>
                
@@ -46,10 +48,10 @@
 
 
     <div class="container-principal1">
-        <h2>INFORMAÇÃO SOBRE SEUS PRODUTOS</h2>
+        <h2>ÚLTIMA COMPRA</h2>
         <div class="info-container">
             <div class="produto">
-            <div class="foto"><img width= "100" src="marvel.png" ></div>
+            <div class="foto"><img src="marvel.png" ></div>
             <div class="texto">
             <h3>Jogo Marvel Xbox</h3>
                   <p class="valor">R$ 150,00</p>
@@ -58,47 +60,10 @@
                   <p class="formaPagamento">Forma de Pagamento: Cartão</p>
                 </div>
             </div>
-        <div class="produto">
-        <div class="foto"><img width="100" src="Corrida.png"></div>
-        <div class="texto">
-
-        <h3>Jogo F1 Xbox</h3>
-              <p class="valor">R$ 89,90</p>
-              <p class="quantidade">Quantidade: 01</p>
-              <p class="NumeroPar">Número de Parcelas: 02</p>
-              <p class="formaPagamento">Forma de Pagamento: Cartão</p>
-        </div>
-        </div>
-        <div class="produto">
-    <div class="foto"><img width="100" src="mortal.png"></div>
-    <div class="texto">
-
-            <h3>Jogo Mortal Kombat Playstation</h3>
-                  <p class="valor">R$ 359,90</p>
-                  <p class="quantidade">Quantidade: 01</p>
-                  <p class="NumeroPar">Número de parcelas: 04</p>
-                  <p class="formaPagamento">Forma de Pagamento: Cartão</p>
-                </div>
-                </div>
-                <div class="produto">
-        <div class="foto"><img width="100" src="xbox.jpg"></div>
-        <div class="texto">
         
-            <h3>Xbox One</h3>
-                  <p class="valor">R$ 4.500</p>
-                  <p class="quantidade">Quantidade: 01</p>
-                  <p class="NumeroPar">Número de parcelas: 10</p>
-                  <p class="formaPagamento">Forma de Pagamento: Cartão</p>
-                </div>
-                </div>
         </div>
-     
-
-    </div>
-    </div>
-    </div>
 </div>
-
+</main>
 </body>
 <footer>
     <%- include("./partials/footer") %>

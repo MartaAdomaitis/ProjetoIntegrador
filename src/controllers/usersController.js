@@ -43,26 +43,28 @@ console.log("Ops, houve um erro:" + err)
 login:  async (req, res) => {
 	const {email} = req.body
 	const senha = req.body.senha;
-	console.log(senha)
+
 		let user =  await Usuario.findOne({
 			raw:true,	
 		where:{	email: email, senha:senha}
 
    })  
-   console.log(user)
+  
 //    console.log("Teste email primeiro " + user.email)
 //    console.log("Teste senha primeiro" + user.senha)
 
 //    let validacaoSenha = bcrypt.compareSync(senha, user.senha)
 
 if(user) {
+	delete user.senha;
+    req.session.userLogged = user;
 
-        res.redirect("/");
+        res.redirect("/painelusuario");
       }else{
 		res.redirect("/login");
 	  }
-
-      req.session.user = user
+	  console.log(req.session)
+    
    },
 
    alertaLogin: (req, res) => {
@@ -70,8 +72,8 @@ if(user) {
 },
 	
 	painel:(req, res) => {
-		Usuario.findByPk(req.params.id)
-		res.render('painelUsuario');
+		res.render('painelUsuario',{
+		userLogged: req.session.userLogged})
 	},
 
 	allUsuario: ("/painelusuario", (req, res) => {
