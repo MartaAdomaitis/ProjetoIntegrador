@@ -7,47 +7,41 @@
 
            <div class="perfil">
             <h1 class="text-center">PERFIL DO CLIENTE</h1>
-            <h3 class="text-center">Informações sobre:  </h3>
+            <h3 class="text-center">Informações sobre:</h3>
+                            
            </div>
                
-           <form action="" method="post"></form>
+           <form action="/painelusuario/:id/update?_method=PUT" method="post" >
 
             <div class="form-floating p-1 col-md-8">
               
                 <label for="nome" class="form-label">Nome: </label> 
-                <input type="text" name="nome" class="form-control" value=""> 
-                <button type="submit" class="btn-outline-success align-middle">Editar</button>  
-                <button type="delete" class="btn-outline-success align-middle">Apagar</button>       
+                <input action="/painelusuario/:id/update?_method=PUT" method="post" type="text" name="nome" class="form-control" value=""> 
+                
             </div>  
             <br>
        
             <div class="form-floating p-1 col-md-8">
-                <label for="cpf" class="form-label">CPF:</label>
-                <input type="text" name="nome" class="form-control" value=""> 
-                <button type="submit" class="btn-outline-success align-middle">Editar</button>  
-                <button type="delete" class="btn-outline-success align-middle">Apagar</button>
-            </div>
-            <br>
-
-             <div class="form-floating p-1 col-md-8">
-                <label for="CEP" class="form-label">CEP:</label> 
-                <input type="text" name="nome" class="form-control" value=""> 
-                <button type="submit" class="btn-outline-success align-middle">Editar</button> 
-                <button type="delete" class="btn-outline-success align-middle">Apagar</button> 
-                                              
+                <label for="senha" class="form-label">Senha:</label>
+                <input type="password" name="senha" class="form-control" value=""> 
+            
             </div>
             <br>
 
             <div class="form-floating p-1 col-md-8">
                 <label for="endereco" class="form-label">Endereço:</label>   
                 <input type="text" class="form-control" name="endereco" value="">
-                <button type="submit" class="btn-outline-success align-middle">Editar</button>  
-                <button type="delete" class="btn-outline-success align-middle">Apagar</button>                           
+              
+            </div> 
+
+            <div class="form-floating p-1 col-md-8">
+                <label for="endereco" class="form-label">Telefone:</label>   
+                <input type="text" class="form-control" name="telefone" value="">                         
             </div>   
-            
-            </div>
+            <button action="/painelusuario/:id/update?_method=PUT" method="post" >Editar</button>    
+        </form>
         </div> 
-        
+        <h2><button method="post" type="delete" name="nomeDelete">Apagar usuário</button>   </h2>   
 
 
 

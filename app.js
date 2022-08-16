@@ -4,7 +4,8 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const sessions = require('express-session');
 const PORT = 3000;
-
+const methodOverride = require("method-override")
+const Swal = require('sweetalert2')
 
 const rotaIndex = require('./src/routes/index');
 const rotaProdutos = require('./src/routes/produto');
@@ -21,10 +22,9 @@ const oneDay = 1000 * 60 * 60 * 24;
 
 //sessão middleware
 app.use(sessions({
-  secret: "segredo",
+  secret: "GAMEZONE",
+  resave: false,
   saveUninitialized:true,
-  cookie: { maxAge: oneDay },
-  resave: true
 }));
 
 
@@ -36,6 +36,7 @@ app.use(bodyParser.urlencoded({extended:true}))
 // cookie parser middleware
 app.use(cookieParser());
 
+app.use(methodOverride("_method"));
 app.use(rotaIndex);
 app.use(rotaProdutos);
 app.use(rotaCarrinho);

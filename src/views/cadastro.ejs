@@ -10,22 +10,7 @@
     <html>
         <h1>Seja bem-vindo(a)!</h1>
         <div class="cadastro">
-        <div class="Login">
-            <h2>LOGIN</h2>
-        <form id="formularioLogin" action="/cadastro" method="post">
-            <div class="email">
-                <label for="email">E-mail</label>
-                <input type="email" id="email1" name="emailLogin" required/>
-            </div>
-            <div class="password">
-                <label for="password">Senha</label>
-                <input type="password" id="password1" name="senhaLogin" required/>
-            </div>
-                <button type="submit">Enviar</button>
-            
-        </form>
-    </div>
-
+       
     <div class="layoutCadastro"><h2>QUERO ME CADASTRAR</h2>
     <form action="/cad" method="post" id="formularioCadastro" >
         <div class="name">
@@ -52,8 +37,9 @@
             <label for="telefone">Telefone</label>
             <input type="number" id="telefone" name="telefone" required/>
         </div>
-    <button action="/cad" method="post" >Enviar</button></a>
+    <button action="/usuario/login" method="post" >Enviar</button></a>
     </form>
+    <a href="http://localhost:3000/login"><button>Já tenho cadastro</button></a>
 </div>
 </div>
     <ul id="errors"></ul>

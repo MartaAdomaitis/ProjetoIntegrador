@@ -1,12 +1,18 @@
 const express = require('express');
 const router = express.Router();
 const multer = require("multer");
-
+const cadastroAuth = require('../middlewares/cadastroAuth');
+const loginAuth = require('../middlewares/loginAuth');
+const methodOverride = require("method-override")
 
 const usersController = require('../controllers/usersController');
-router.get('/cadastro', usersController.index); 
-router.get('/painelusuario', usersController.painel);
+router.get('/cadastro', cadastroAuth, usersController.index); 
+router.get('/painelusuario/:id/editar', usersController.painel);
 
+router.post('/usuario/login', usersController.login);
+router.put('/painelusuario/:id/update', usersController.atualizar);
+router.get('/login', loginAuth, usersController.viewLogin);  
+router.get('/login/error', usersController.alertaLogin)/
 //router.get('/findByPk/:id', usersController.findByPk)
 
 

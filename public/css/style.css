@@ -753,7 +753,11 @@ body {
     /* .checkbox input {
     } */
 }
-
+  /*login*/
+  .loginError{
+      font-style: red bold;
+      color: red;
+  }
     /*footer*/
 
     footer{

@@ -4,36 +4,26 @@ const db = require('../database/models/db');
 const express = require('express');
 const bodyParser = require("body-parser");
 const bcrypt = require("bcrypt")
-const Usuario = require ("../database/models/Usuario.js").Usuario
-const {body} = require ("express-validator");
-const productsFilePath = path.join(__dirname, '../data/produtoDataBase.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
-const visited = products.filter(function(product){
-	return product.category == 'visited'
-})
-const inSale = products.filter(function(product){
-	return product.category == 'in-sale'
-})
+const validarResultado = require ("express-validator")
+const Usuario = require ("../database/models/usuario.js").Usuario
+const Swal = require('sweetalert2')
+const session = require("express-session")
 
 
 const usersController = {
 	index: (req, res) => {
 		res.render('cadastro');
 	},
+	viewLogin: (req, res) => {
+		res.render('login');
+	},
 	create: (req,res) => {
 	const nome = req.body.nome;
 	const email = req.body.email;
-	const senha = bcrypt.hashSync(req.body.senha,10);
+	const senha = req.body.senha;
 	const endereco = req.body.endereco;
 	const telefone = req.body.telefone;
 	const cpf = req.body.cpf;
-
-	body("nome").notEmpty().withMessage('Digite o Nome').isString();
-    body("email").notEmpty().withMessage('Digite Um Email').isEmail();
-    body("senha").notEmpty().withMessage('Digite Uma Senha');
 
 	const criacao = Usuario.create({
 	nome: nome,	
@@ -44,39 +34,43 @@ const usersController = {
 	cpf: cpf
 	}).then(()=>{
 		console.log("Cadastrado com sucesso!");
-		res.redirect('/');
+		res.redirect('/login');
 	}).catch((err)=>{
 console.log("Ops, houve um erro:" + err)
 	})
 },
 	
-login: (req, res) => {
-	res.render('cadastro');
-	const emailUsuario = req.body.emailLogin;
-	const senhaUsuario = req.body.senhaLogin;
-	let user= Usuario
+login:  async (req, res) => {
+	const {email} = req.body
+	const senha = req.body.senha;
+	console.log(senha)
+		let user =  await Usuario.findOne({
+			raw:true,	
+		where:{	email: email, senha:senha}
 
-	body("email").notEmpty().withMessage('Digite Um Email Valido').isEmail();
-    body("password").notEmpty().withMessage('Digite Uma Senha Valida');
+   })  
+   console.log(user)
+//    console.log("Teste email primeiro " + user.email)
+//    console.log("Teste senha primeiro" + user.senha)
 
-	const senhaValida = (user, password) =>{
-		return bcrypt.compareSync(password, user.password);
-	}
-	const loginUser = ()=>{if (!senhaValida) {
-		return res.send("Senha Inválida")
-}else{
-	Usuario.findOne({	
-		where:{	email: emailUsuario,}
-   }).then((userinfo) => {
-	res.redirect("/")
-	res.send("Login realizado com sucesso")})
-}
-	//    req.session.Usuario = Usuario
+//    let validacaoSenha = bcrypt.compareSync(senha, user.senha)
 
-	}},
+if(user) {
+
+        res.redirect("/");
+      }else{
+		res.redirect("/login");
+	  }
+
+      req.session.user = user
+   },
+
+   alertaLogin: (req, res) => {
+	res.render('alertaLogin');
+},
 	
-		
 	painel:(req, res) => {
+		Usuario.findByPk(req.params.id)
 		res.render('painelUsuario');
 	},
 
@@ -91,9 +85,39 @@ res.render ("Houve um erro: " + err);
 		})
 	}),
 
+ atualizar: (req, res) => {
+	const nome = req.body.nome;
+	const email = req.body.email;
+	const senha = req.body.senha;
+	const endereco = req.body.endereco;
+	const telefone = req.body.telefone;
 
+	let {id} = req.params.id
+	console.log(id)
+	const usuario = Usuario.findByPk(id)
+	const atualização= (usuario)=>{
+		const atualizacao = usuario.update({
+			nome: nome,	
+			})
+	if(atualização != undefined){
+		console.log("Atualizado com sucesso!");
+		document.getElementById('Enviar').onclick = function(){
+			swal('Boa!', 'Deu tudo certo!', 'success')
+		  };
+		res.redirect('/');	
+	
+	}else{
+		console.log("Problema na atualização");
+		document.getElementById('Enviar').onclick = function(){
+			swal('Oh no...', 'Algo deu errado!', 'error')
+		
+		  };
+		
+	}
+	
 
-};
-
+	}
+ }
+}
 
 module.exports = usersController;
