@@ -4,16 +4,19 @@ const multer = require("multer");
 const cadastroAuth = require('../middlewares/cadastroAuth');
 const loginAuth = require('../middlewares/loginAuth');
 const methodOverride = require("method-override")
+const loggedUserMiddleware = require("../middlewares/loggedUserMiddleware")
+const notLoggedUserMiddleware = require("../middlewares/notLoggedUserMiddleware")
 
 const usersController = require('../controllers/usersController');
-router.get('/cadastro', cadastroAuth, usersController.index); 
-router.get('/painelusuario', usersController.painel);
+router.get('/cadastro', loggedUserMiddleware, cadastroAuth, usersController.index); 
+router.get('/painelusuario', notLoggedUserMiddleware, usersController.painel);
 
 router.post('/usuario/login', usersController.login);
 router.put('/painelusuario/:id/update', usersController.atualizar);
-router.get('/login', loginAuth, usersController.viewLogin);  
+router.get('/login', loggedUserMiddleware, loginAuth, usersController.viewLogin);  
 router.get('/login/error', usersController.alertaLogin);
 router.delete('/user/delete', usersController.delete)
+router.get("/users/logout", usersController.logout)
 //router.get('/findByPk/:id', usersController.findByPk)
 
 

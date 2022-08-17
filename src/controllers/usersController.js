@@ -128,7 +128,10 @@ try{
 		return res.redirect("/")
 	}
 
-	}
+	},
+	logout: (req, res)=>{
+	req.session.destroy()
+	return res.redirect("/")}
  }
 
 
