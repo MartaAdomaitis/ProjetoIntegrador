@@ -1,4 +1,3 @@
-CREATE SCHEMA `projeto_integrador` ;
 
 CREATE TABLE `carrinho` (
   `clientes_id` int(11) NOT NULL,
@@ -8,7 +7,6 @@ CREATE TABLE `carrinho` (
   `produto_preco` decimal(5,2) NOT NULL,
   `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 
 CREATE TABLE `oferta` (
   `produto_id` int(11) NOT NULL,
@@ -41,7 +39,6 @@ INSERT INTO `produto` (`id`, `nome`, `preco`, `img`, `description`) VALUES
 (5, 'Controle Xbox', '399.90', './public/img/controlexo.jpg', 'Controle Xbox One sem fio, garantia de 1 ano'),
 (6, 'Jogo Marvel 3 Xbox', '150.00', './marvel.jpg', 'Jogo Xbox Marvel para faixa etÃ¡ria a partir dos 04 anos de idade.');
 
-
 CREATE TABLE `usuario` (
   `id` int(11) NOT NULL,
   `nome` varchar(50) NOT NULL,
@@ -52,18 +49,18 @@ CREATE TABLE `usuario` (
   `senha` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-
 INSERT INTO `usuario` (`id`, `nome`, `endereco`, `cpf`, `telefone`, `email`, `senha`) VALUES
-(5, 'JÃºlia Braga da Silva', 'Rua das grumixamas', '32333333333333', '11985103418', 'juliasilva@gmail.com', '123456'),
-(6, 'Carla Fernanda', 'Rua das Rosas, 555', '565656565665', '99999999', 'carla@gmail.com', '8888'),
-(7, 'Zuila', '645646464', '46646464', '615651165', 'zuila@gmail.com', '454456456'),
-(8, 'Joana', 'Rua das correntes', '777777', '77777777', 'joana@gmail.com', '$2b$10$535'),
-(9, 'MARTA SILVA ADOMAITIS', 'Rua das Grumixamas, 327', '47042404874', '11985103418', 'martaadomaitis@gmail.com', '$2b$10$1Bb');
-
+(8, 'Joana', 'Rua das correntes', '777777', '77777777', 'joana@gmail.com', '123456'),
+(12, 'Joaquim', 'Rua Fiação Da Saúde 260, Bl C3 Apt 145', '353535353536', '1198848487', 'joaquim@gmail.com', '555'),
+(13, 'Pedro', 'Rua dos pastos, 327', '45453453453', '119857354', 'pedro@gmail.com', '555'),
+(15, 'Marcos', 'Avenida jabaquara, 327', '4753275375', '11984523453', 'marcos@gmail.com', '123456'),
+(16, 'Bruna', 'rua dos cachos, 212', '2366655995', '6565656565', 'bruna@gmail.com', '555'),
+(18, 'Lais', 'Rua das Grumixamas, 327, Apt 12', '14464648648', '11985103418', 'lais@gmail.com', '123456'),
+(19, 'Carlos', 'Rua dos Buritis, 925', '4165651615', '445415415', 'carlos@gmail.com', '123'),
+(20, 'gabriel', 'Rua das Marta, 327, Apt 12', '2342342342', '11942342', 'gabriel@gmail.com', '123123123');
 
 ALTER TABLE `carrinho`
   ADD PRIMARY KEY (`id`);
-
 
 ALTER TABLE `oferta`
   ADD KEY `fk_produto` (`produto_id`);
@@ -84,11 +81,11 @@ ALTER TABLE `usuario`
 ALTER TABLE `produto`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
+
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
 
 ALTER TABLE `oferta`
   ADD CONSTRAINT `fk_produto` FOREIGN KEY (`produto_id`) REFERENCES `produto` (`id`);
 COMMIT;
-
-
