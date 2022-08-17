@@ -12,7 +12,8 @@ router.get('/painelusuario', usersController.painel);
 router.post('/usuario/login', usersController.login);
 router.put('/painelusuario/:id/update', usersController.atualizar);
 router.get('/login', loginAuth, usersController.viewLogin);  
-router.get('/login/error', usersController.alertaLogin)/
+router.get('/login/error', usersController.alertaLogin);
+router.delete('/user/delete', usersController.delete)
 //router.get('/findByPk/:id', usersController.findByPk)
 
 

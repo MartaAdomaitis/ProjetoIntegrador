@@ -87,39 +87,49 @@ res.render ("Houve um erro: " + err);
 		})
 	}),
 
- atualizar: (req, res) => {
+ atualizar: async (req, res) => {
 	const nome = req.body.nome;
 	const email = req.body.email;
 	const senha = req.body.senha;
 	const endereco = req.body.endereco;
 	const telefone = req.body.telefone;
 
-	let {id} = req.params.id
+	let {id} = req.session.userLogged
 	console.log(id)
-	const usuario = Usuario.findByPk(id)
-	const atualização= (usuario)=>{
-		const atualizacao = usuario.update({
-			nome: nome,	
-			})
-	if(atualização != undefined){
-		console.log("Atualizado com sucesso!");
-		document.getElementById('Enviar').onclick = function(){
-			swal('Boa!', 'Deu tudo certo!', 'success')
-		  };
-		res.redirect('/');	
+const usuario = await Usuario.findByPk(id)
+	console.log(usuario)
+		try{
+			await usuario.update({
+				nome: nome
+			}
+			)
+			return res.redirect("/painelusuario")
+		}
+			catch(err){
+				console.log(err)
+				return res.redirect("/painelusuario")
+			}
+
 	
-	}else{
-		console.log("Problema na atualização");
-		document.getElementById('Enviar').onclick = function(){
-			swal('Oh no...', 'Algo deu errado!', 'error')
-		
-		  };
-		
+
+	},
+	delete: async (req, res) => {
+		let {id} = req.session.userLogged
+
+const usuario = await Usuario.findByPk(id)
+try{
+	await usuario.destroy(
+	)
+	req.session.destroy()
+	return res.redirect("/")
+}
+	catch(err){
+		console.log(err)
+		return res.redirect("/")
 	}
-	
 
 	}
  }
-}
+
 
 module.exports = usersController;
