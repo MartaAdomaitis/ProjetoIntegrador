@@ -12,9 +12,9 @@ const rotaProdutos = require('./src/routes/produto');
 const rotaCarrinho = require('./src/routes/carrinho');
 const rotaUsers = require('./src/routes/user');
 
-const Usuario = require ("./src/database/models/Usuario.js")
+const Usuario = require ("./src/database/models/usuario.js");
 const app = express();
-const db = require('./src/database/models/index')
+const db = require('./src/database/models/index');
 
 //sessão
 // criando 24 hours com milisegundos

@@ -7,15 +7,54 @@
     <%- include("./partials/header") %>
   </header> 
   <main>
-    <div class="banner-principal">
-      <img class=banner src="/banner.png" alt="Imagem do produto 1">
-     <div class="botoes">
-      <span id="seta-esquerda"><img src="Vector-1.png" alt="seta esquerda"></span>
-      <span id="botao-esquerda"><img src="Ellipse 1.png" alt="botão esquerda"></span>
-    
-      <span id="seta-direita"><img src="Vector.png" alt="seta direita"></span>
-      <span id="botao-direita"><img src="Ellipse 2.png" alt="botão direita"></span>
-  </div>
+    <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel" data-bs-theme="light">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <svg class="bd-placeholder-img"  width="100%" height="100%" xmlns="https://github.com/MartaAdomaitis/ProjetoIntegrador/blob/b409099de992d70efb21d130c17e57da980e97ee/public/img/Controle%20(1).jpg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+         
+          <div class="container">
+            <div class="carousel-caption text-start">
+              <h1>A casa do seu game!</h1>
+              <p class="opacity-75">Preparamos um seleção com os melhores jogos</p>
+              <p><a class="btn btn-lg btn-primary" href="#">Vem conferir</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Promoções da semana</h1>
+              <p>Jogue o que está bombando pelo menor preço</p>
+              <p><a class="btn btn-lg btn-primary" href="#">Comprar</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+          <div class="container">
+            <div class="carousel-caption text-end">
+              <h1>Ainda não faz parte do nosso clube de prêmios</h1>
+              <p>Ganhe prêmios e descontos exclusivos</p>
+              <p><a class="btn btn-lg btn-primary" href="#">Participar</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Acesse!</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Acesse!</span>
+      </button>
+    </div>
   </div>
     <h1 class="titulo">Promoção do Dia</h1>
 
