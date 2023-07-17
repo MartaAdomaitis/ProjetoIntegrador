@@ -9,7 +9,6 @@ Criação de site ponta a ponta usando as tecnologias, linguagens e pacotes:
 - HTML
 - MySQL
 - Sequelize
-- React 
 - Bootstrap
 - Express
 - Design MVC
