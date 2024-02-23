@@ -1,4 +1,4 @@
-# ProjetoIntegrador - site GAMEZONE (loja de eletrônicos)
+# ProjetoIntegrador - site GAMEZONE (e-commerce de eletrônicos)
 Repositório criado para o projeto integrador, desenvolvido no curso da Digital House e continuamente atualizado após a finalização do curso (novembro/2022).
 
 Criação de site ponta a ponta usando as tecnologias, linguagens e pacotes:
